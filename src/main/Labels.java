@@ -35,6 +35,11 @@ public class Labels {
     public static final String itemDescMagicStone = "Adds 1 point permanently to the " + Labels.magic + " stat";
 
 
+    //Item Types
+    public static final String itemTypeWeapon = "Weapon";
+    public static final String itemTypeAmmo = ".38 Revolver Ammo";
+
+
     //Magic Names
     public static final String magicNameFireball = "Fireball";
     public static final String magicNameTornado = "Tornado";
