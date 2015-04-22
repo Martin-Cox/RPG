@@ -60,9 +60,8 @@ public class Main {
         System.out.println();
         System.out.println("You don't know any magic! Lets teach you some spells");
 
-        LinkedHashMap<Magic, Integer> playerMagic = player.getMagic();
-        playerMagic.put((Magic) magic.get(0), 8);
-        playerMagic.put((Magic) magic.get(2), 3);
+        player.updateMagic((Magic) magic.get(0), 8);
+        player.updateMagic((Magic) magic.get(2), 3);
 
         System.out.println();
         System.out.println("You have " + player.getMagic().size() + " magic in your inventory. They are as follows: ");
@@ -72,6 +71,12 @@ public class Main {
             Integer value = entry.getValue();
             System.out.println("Magic Name: \"" + key + "\" Quantity: " + value);
         }
+
+        System.out.println();
+        System.out.println("Changing the amount of " + ((Magic) magic.get(1)).getName() + " in your inventory");
+
+        player.updateMagic((Magic) magic.get(1), -3);
+
 
         System.out.println();
         System.out.println("-------------------MAKING NPC's-------------------");

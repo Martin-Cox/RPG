@@ -73,13 +73,12 @@ public class Labels {
      */
     public static Object getLabelValue(String Label) {
         Object labels = new Labels();
-        String label = Label;
 
         try {
-            Field field = labels.getClass().getField(label);
+            Field field = labels.getClass().getField(Label);
             return field.get(labels);
         } catch (Exception e) {
-            return "";
+            return "PARSE_LABEL_ERROR";
         }
     }
 

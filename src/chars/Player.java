@@ -42,19 +42,63 @@ public class Player {
         stats.put(Labels.strength, 110);
     }
 
-    public String getName() {
-        return this.name;
-    }
+    /**
+     * Gets player character name
+     *
+     * @return String Player name
+     */
+    public String getName() { return this.name; }
 
-    public LinkedHashMap<String, Integer> getStats() {
-        return this.stats;
-    }
+    /**
+     * Gets player stats
+     *
+     * @return LinkedHashMap of player stats
+     */
+    public LinkedHashMap<String, Integer> getStats() { return this.stats; }
 
-    public LinkedHashMap<Item, Integer> getInventory() {
-        return this.inventory;
-    }
+    /**
+     * Gets the players inventory
+     *
+     * @return LinkedHashMap of the players inventory with Item, Quantity pairs
+     */
+    public LinkedHashMap<Item, Integer> getInventory() { return this.inventory; }
 
-    public LinkedHashMap<Magic, Integer> getMagic() {
-        return this.magic;
+    /**
+     * Gets the players magic inventory
+     *
+     * @return LinkedHashMap of the players magic inventory with Magic, Quantity pairs
+     */
+    public LinkedHashMap<Magic, Integer> getMagic() { return this.magic; }
+
+    /**
+     * Sets the players magic inventory
+     *
+     * @param newMagic LinkedHashMap of Magic, Value pairs
+     */
+    public void setMagic(LinkedHashMap<Magic, Integer> newMagic) { this.magic = newMagic; }
+
+    /**
+     * Updates characters magic inventory by adding the magic and quantity
+     *
+     * @param magic The magic to be updated/added to the characters inventory
+     * @param quantity The number of this magic to add or remove
+     */
+    public void updateMagic(Magic magic, Integer quantity) {
+        Integer updatedQuantity;
+        try {
+            updatedQuantity = this.magic.get(magic).intValue() + quantity;
+        } catch(NullPointerException e) {
+            //This just means that the character didn't already have this magic in their inventory
+
+            //If character does not have any of the spell and we are trying to remove some, then add the magic to the inventory but with 0 quantity
+            if (quantity > 0) {
+                updatedQuantity = quantity;
+            } else {
+                updatedQuantity = 0;
+            }
+
+        }
+        this.magic.put(magic, updatedQuantity);
+
     }
 }
