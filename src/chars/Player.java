@@ -78,7 +78,20 @@ public class Player {
     public void setMagic(LinkedHashMap<Magic, Integer> newMagic) { this.magic = newMagic; }
 
     /**
-     * Updates characters magic inventory by adding the magic and quantity
+     * Updates characters magic inventory by setting the quantity of a given magic
+     *
+     * @param magic The magic to be updated to the characters inventory
+     * @param quantity The number of this magic the player will have in their inventory
+     */
+    public void setMagicQuantity(Magic magic, Integer quantity) {
+        if (quantity >= 0) { this.magic.put(magic, quantity); }
+    }
+
+    /**
+     * Updates characters magic inventory by adding the magic and quantity.
+     * Does not allow the quantity of magic in the players inventory to go below 0.
+     * If a situation does occur where the players quantity will go below 0, then
+     * the players quantity is set to 0 instead.
      *
      * @param magic The magic to be updated/added to the characters inventory
      * @param quantity The number of this magic to add or remove
@@ -87,6 +100,7 @@ public class Player {
         Integer updatedQuantity;
         try {
             updatedQuantity = this.magic.get(magic).intValue() + quantity;
+            if (updatedQuantity < 0)  {updatedQuantity = 0; }
         } catch(NullPointerException e) {
             //This just means that the character didn't already have this magic in their inventory
 
@@ -99,6 +113,5 @@ public class Player {
 
         }
         this.magic.put(magic, updatedQuantity);
-
     }
 }
