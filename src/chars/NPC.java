@@ -19,19 +19,22 @@ public class NPC extends Character{
     ArrayList<String> lastNames = new ArrayList<>(
             Arrays.asList("Williams", "Cox", "Smith", "Davidson", "Blake", "Richards"));
 
+    private String firstName;
+    private String lastName;
+
     public NPC() {
 
         super("", null, null, null);
 
         Random random = new Random();
         int index = random.nextInt(firstNames.size());
-        String firstName = firstNames.get(index).toString();
+        this.firstName = firstNames.get(index).toString();
 
         Random random2 = new Random();
         int index2 = random2.nextInt(lastNames.size());
-        String lastName = lastNames.get(index2).toString();
+        this.lastName = lastNames.get(index2).toString();
 
-        super.name = firstName + " " + lastName;
+        super.name = this.firstName + " " + this.lastName;
 
     }
 
