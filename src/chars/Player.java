@@ -110,8 +110,14 @@ public class Player {
             } else {
                 updatedQuantity = 0;
             }
-
         }
         this.magic.put(magic, updatedQuantity);
+        try {
+            //If player.getJunctions.contains(Magic) {
+                //this.updateStats();           //PLAYER STATS WILL NEED TO BE UPDATED AFTER PLAYER MAGIC CHANGES AND THAT MAGIC IS JUNCTIONED
+            //}
+        } catch (Exception e) {
+            //Don't really know how to handle an exception :/
+        }
     }
 }

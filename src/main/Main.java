@@ -47,6 +47,8 @@ public class Main {
         playerInventory.put((Item) items.get(0), 3);
         playerInventory.put((Item) items.get(1), 2);
         playerInventory.put((Item) items.get(2), 6);
+        playerInventory.put((Item) items.get(3), 1);
+        playerInventory.put((Item) items.get(4), 40);
 
         System.out.println();
         System.out.println("You have " + player.getInventory().size() + " item/s in your inventory. They are as follows: ");
