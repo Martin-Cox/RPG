@@ -3,7 +3,10 @@ package entities;
 import java.util.LinkedHashMap;
 
 /**
- * Ranged weapon type. All ranged  weapons will be this type.
+ * Instance of a ranged weapon
+ *
+ * @author Martin Cox
+ * @since 2015-04-25
  */
 public class RangedWeapon extends Weapon {
 

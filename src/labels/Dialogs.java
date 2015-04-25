@@ -7,7 +7,7 @@ import java.lang.reflect.Field;
  * Dialog text for all conversations in the game. To implement translations, you should change these values
  *
  * @author Martin Cox
- * @since 2015-04-18
+ * @since 2015-04-25
  */
 public class Dialogs {
 

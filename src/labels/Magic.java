@@ -3,7 +3,10 @@ package labels;
 import java.lang.reflect.Field;
 
 /**
- * Created by Martin on 25/04/2015.
+ * Magic text for all magic in the game. To implement translations, you should change these values
+ *
+ * @author Martin Cox
+ * @since 2015-04-25
  */
 public class Magic {
 

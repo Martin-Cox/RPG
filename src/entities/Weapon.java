@@ -3,7 +3,10 @@ package entities;
 import java.util.LinkedHashMap;
 
 /**
- * Standard weapon type. All melee weapons will be this type.
+ * Instance of a standard weapon
+ *
+ * @author Martin Cox
+ * @since 2015-04-25
  */
 public class Weapon extends Item {
 

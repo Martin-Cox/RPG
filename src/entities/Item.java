@@ -29,8 +29,10 @@ public class Item {
         canBeUsedInWorld = CanBeUsedInWorld;
     }
 
-
-    public String getName() {
-        return this.name;
-    }
+    /**
+     * Returns value of the name property
+     *
+     * @return String
+     */
+    public String getName() { return this.name; }
 }
