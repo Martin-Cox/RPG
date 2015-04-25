@@ -40,8 +40,8 @@ public class Magic {
      * @param StatusEffectBaseChance The base chance this magic has of causing the status effect
      */
     public Magic(String Name, String Description, boolean CanBeUsedInBattle, boolean CanBeUsedInWorld, LinkedHashMap StatModifiers, String Element, String StatusEffectName, double BaseDamage, double StatusEffectBaseChance) {
-        name = Labels.getLabelValue(Name).toString();
-        description = Labels.getLabelValue(Description).toString();
+        name = labels.Magic.getLabelValue(Name).toString();
+        description = labels.Magic.getLabelValue(Description).toString();
         canBeUsedInBattle = CanBeUsedInBattle;
         canBeUsedInWorld = CanBeUsedInWorld;
         statModifiers = StatModifiers;

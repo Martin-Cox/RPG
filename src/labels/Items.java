@@ -24,7 +24,7 @@ public class Items {
      * @return The string value of the label name Label
      */
     public static Object getLabelValue(String Label) {
-        Object labels = new Labels();
+        Object labels = new Items();
 
         try {
             Field field = labels.getClass().getField(Label);
