@@ -4,6 +4,8 @@ import chars.*;
 import db.DB;
 import entities.Item;
 import entities.Magic;
+import entities.Weapon;
+import labels.Labels;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -78,6 +80,10 @@ public class Main {
         System.out.println("Changing the amount of " + ((Magic) magic.get(1)).getName() + " in your inventory");
 
         player.updateMagic((Magic) magic.get(1), -3);
+
+
+        System.out.println("Equipping " + ((Item) items.get(3)).getName() + " in your right hand");
+        player.equipWeapon(Labels.rightHand, (Weapon) items.get(3));
 
 
         System.out.println();

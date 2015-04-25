@@ -2,6 +2,8 @@ package chars;
 
 import entities.Item;
 import entities.Magic;
+import entities.Weapon;
+import labels.Labels;
 
 import java.util.LinkedHashMap;
 
@@ -14,8 +16,8 @@ public class Character {
     LinkedHashMap<String, Integer> stats = new LinkedHashMap();
     LinkedHashMap<Item, Integer> inventory = new LinkedHashMap();
     LinkedHashMap<Magic, Integer> magic = new LinkedHashMap();
-    Item equippedWeapon_L;
-    Item equippedWeapon_R;
+    Weapon equippedWeapon_L;
+    Weapon equippedWeapon_R;
 
     /**
      *
@@ -24,7 +26,7 @@ public class Character {
      * @param Inventory LinkedHashMap of Items and quantity pairs
      * @param Magic LinkedHashMap of Magic and quantity pairs
      */
-    public Character(String Name, LinkedHashMap Stats, LinkedHashMap Inventory, LinkedHashMap Magic, Item EquippedWeapon_L, Item EquippedWeapon_R) {
+    public Character(String Name, LinkedHashMap Stats, LinkedHashMap Inventory, LinkedHashMap Magic, Weapon EquippedWeapon_L, Weapon EquippedWeapon_R) {
         this.name = Name;
         if (Stats == null) { Stats = new LinkedHashMap(); }
         if (Inventory == null) { Inventory = new LinkedHashMap(); }
@@ -120,4 +122,41 @@ public class Character {
         }
     }
 
+    /**
+     * Equips a weapon in the characters left or right hand and removes 1 quantity from characters inventory.
+     * If the weapon has to be used with both hands then update both hands to reflect this.
+     * If character currently has an equipped weapon then that weapon is put back into the inventory.
+     *
+     * @param HandToEquip A string value from Labels to determine which hand to equip the weapon in
+     * @param Weapon The weapon to equip
+     */
+    public void equipWeapon(String HandToEquip, Weapon Weapon) {
+        if (HandToEquip == Labels.leftHand) {
+            //Equip weapon in left hand
+
+            //Remove currently equipped weapon (if any) and place it back into the inventory
+            //Weapon equippedItemToReplace = this.equippedWeapon_L;
+            //if (equippedItemToReplace != null) { this.updateInventory(equippedItemToReplace, 1);
+
+            //Remove weapon to equip from inventory and equip item
+            //this.updateInventory(Weapon, -1);
+            this.equippedWeapon_L = Weapon;
+            if (Weapon.getDualHanded()) {
+                this.equippedWeapon_R = Weapon;
+            }
+        } else if (HandToEquip == Labels.rightHand) {
+            //Equip weapon in right hand
+
+            //Remove currently equipped weapon (if any) and place it back into the inventory
+            //Weapon equippedItemToReplace = this.equippedWeapon_R;
+            //if (equippedItemToReplace != null) { this.updateInventory(equippedItemToReplace, 1);
+
+            //Remove weapon to equip from inventory and equip item
+            //this.updateInventory(Weapon, -1);
+            this.equippedWeapon_R = Weapon;
+            if (Weapon.getDualHanded()) {
+                this.equippedWeapon_L = Weapon;
+            }
+        }
+    }
 }

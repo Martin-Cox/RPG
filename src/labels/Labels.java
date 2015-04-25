@@ -34,7 +34,9 @@ public class Labels {
     public static final String statusNone = "None";
 
 
-
+    //Misc labels
+    public static final String leftHand = "Left Hand";
+    public static final String rightHand = "Right Hand";
 
     /**
      * Gets the flavour text for a given label
