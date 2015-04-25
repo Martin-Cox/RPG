@@ -12,34 +12,28 @@ import entities.Item;
  * @author Martin Cox
  * @since 2015-04-18
  */
-public class Player {
+public class Player extends Character{
 
-    private String name;
-    private LinkedHashMap<String, Integer> stats = new LinkedHashMap();
-    private LinkedHashMap<Item, Integer> inventory = new LinkedHashMap();
-    private LinkedHashMap<Magic, Integer> magic = new LinkedHashMap();
-
-    /**
+     /**
      * Create a new player character instance. Only 1 should be initialised.
      *
-     * @param charName The player characters name. Entered by the player.
+     * @param Name The player characters name. Entered by the player.
      */
-    public Player(String charName) {
+    public Player(String Name) {
 
-        //Players chosen character name
-        name = charName;
+        super(Name, null, null, null);
 
         //Players starting stats
-        stats.put(Labels.HP, 400);
-        stats.put(Labels.level, 1);
-        stats.put(Labels.agility, 100);
-        stats.put(Labels.defence, 90);
-        stats.put(Labels.evasion, 35);
-        stats.put(Labels.hitRate, 255);
-        stats.put(Labels.luck, 60);
-        stats.put(Labels.magic, 90);
-        stats.put(Labels.spirit, 50);
-        stats.put(Labels.strength, 110);
+        super.stats.put(Labels.HP, 400);
+        super.stats.put(Labels.level, 1);
+        super.stats.put(Labels.agility, 100);
+        super.stats.put(Labels.defence, 90);
+        super.stats.put(Labels.evasion, 35);
+        super.stats.put(Labels.hitRate, 255);
+        super.stats.put(Labels.luck, 60);
+        super.stats.put(Labels.magic, 90);
+        super.stats.put(Labels.spirit, 50);
+        super.stats.put(Labels.strength, 110);
     }
 
     /**

@@ -8,16 +8,7 @@ import java.util.*;
  * @author Martin Cox
  * @since 2015-04-18
  */
-public class NPC {
-
-    private String fullName;
-    private String firstName;
-    private String lastName;
-
-    private LinkedHashMap<String, Integer> stats = new LinkedHashMap();
-    private LinkedHashMap<String, Integer> inventory = new LinkedHashMap();
-    private LinkedHashMap<String, Integer> magic = new LinkedHashMap();
-
+public class NPC extends Character{
 
     //TODO: Generate entities according to gender
     //TODO: Get entities according to Race
@@ -29,20 +20,23 @@ public class NPC {
             Arrays.asList("Williams", "Cox", "Smith", "Davidson", "Blake", "Richards"));
 
     public NPC() {
+
+        super("", null, null, null);
+
         Random random = new Random();
         int index = random.nextInt(firstNames.size());
-        firstName = firstNames.get(index).toString();
+        String firstName = firstNames.get(index).toString();
 
         Random random2 = new Random();
         int index2 = random2.nextInt(lastNames.size());
-        lastName = lastNames.get(index2).toString();
+        String lastName = lastNames.get(index2).toString();
 
-        fullName = firstName + " " + lastName;
+        super.name = firstName + " " + lastName;
 
     }
 
     public String getName() {
-        return this.fullName;
+        return this.name;
     }
 
 }
