@@ -78,7 +78,7 @@ public class Character {
      * @param quantity The number of this magic the player will have in their inventory
      */
     public void setMagicQuantity(Magic magic, Integer quantity) {
-        if (quantity >= 0) { this.magic.put(magic, quantity); }
+        if (quantity >= 0 && quantity <= 255) { this.magic.put(magic, quantity); }
     }
 
     /**
@@ -95,12 +95,17 @@ public class Character {
         try {
             updatedQuantity = this.magic.get(magic).intValue() + quantity;
             if (updatedQuantity < 0)  {updatedQuantity = 0; }
+            if (updatedQuantity > 255)  {updatedQuantity = 255; }
         } catch(NullPointerException e) {
             //This just means that the character didn't already have this magic in their inventory
 
             //If character does not have any of the spell and we are trying to remove some, then add the magic to the inventory but with 0 quantity
             if (quantity > 0) {
-                updatedQuantity = quantity;
+                if (quantity <= 255) {
+                    updatedQuantity = quantity;
+                } else {
+                    updatedQuantity = 255;
+                }
             } else {
                 updatedQuantity = 0;
             }
@@ -111,7 +116,7 @@ public class Character {
             //this.updateStats();           //PLAYER STATS WILL NEED TO BE UPDATED AFTER PLAYER MAGIC CHANGES AND THAT MAGIC IS JUNCTIONED
             //}
         } catch (Exception e) {
-            //Don't really know how to handle an exception :/
+            //Don't really know how to handle this exception :/
         }
     }
 
