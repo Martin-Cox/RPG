@@ -3,6 +3,7 @@ package main;
 import db.DB;
 import entities.Item;
 import entities.Magic;
+import entities.RangedWeapon;
 import entities.Weapon;
 import labels.Items;
 import labels.Labels;
@@ -29,8 +30,8 @@ public class Setup {
         Item item_1 = new Item(Items.itemNameHealthPotion, "Restores 200HP", true, true);
         Item item_2 = new Item(Items.itemNameElixir, "Removes any negative status effects", true, true);
         Item item_3 = new Item(Items.itemNameMagicStone, "Adds 1 point permanently to the " + Labels.magic +" stat", false, true);
-        Item item_4 = new Weapon("Rusty Revolver", "An old revolver. It's almost falling to pieces, but can  still put a bullet into somebody", true, false, 12.5, 20.0, null, false);
         Item item_5 = new Item(".38 Ammo", "Common revolver ammunition", true, false);
+        Item item_4 = new RangedWeapon("Rusty Revolver", "An old revolver. It's almost falling to pieces, but can  still put a bullet into somebody", true, false, 12.5, 20.0, null, false, item_5);
 
         ArrayList<Item> items = new ArrayList<>(
                 Arrays.asList(item_1, item_2, item_3, item_4, item_5));

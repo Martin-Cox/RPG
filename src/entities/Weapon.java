@@ -3,7 +3,7 @@ package entities;
 import java.util.LinkedHashMap;
 
 /**
- * Created by Martin on 25/04/2015.
+ * Standard weapon type. All melee weapons will be this type.
  */
 public class Weapon extends Item {
 
@@ -14,6 +14,18 @@ public class Weapon extends Item {
 
     Boolean dualHanded;
 
+    /**
+     * Crates a new instance of a weapon.
+     *
+     * @param Name The name of the weapon
+     * @param Description The description of the weapon
+     * @param CanBeUsedInBattle If true the item can be used in battle
+     * @param CanBeUsedInWorld If true the item can be used in the world
+     * @param BaseDamage Base damage of the weapon before any modifiers
+     * @param Durability The durability of the weapon
+     * @param StatModifiers Any modifiers this weapon applies to the character equipping it's stats.
+     * @param DualHanded If true then the weapon has to be used with both hands
+     */
     public Weapon (String Name, String Description, Boolean CanBeUsedInBattle, Boolean CanBeUsedInWorld, Double BaseDamage, Double Durability, LinkedHashMap StatModifiers, Boolean DualHanded) {
         super(Name, Description, CanBeUsedInBattle, CanBeUsedInWorld);
         this.baseDamage = BaseDamage;
@@ -22,8 +34,11 @@ public class Weapon extends Item {
         this.dualHanded = DualHanded;
     }
 
-    public Boolean getDualHanded() {
-        return this.dualHanded;
-    }
+    /**
+     * Returns the value of the dualHanded property
+     *
+     * @return Boolean
+     */
+    public Boolean getDualHanded() { return this.dualHanded; }
 
 }
