@@ -37,11 +37,6 @@ public class NPC extends Character{
         super.name = this.firstName + " " + this.lastName;
 
     }
-
-    public String getName() {
-        return this.name;
-    }
-
 }
 
 
