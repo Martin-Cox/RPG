@@ -1,6 +1,6 @@
 package entities;
 
-import main.Labels;
+import labels.Labels;
 
 import java.util.LinkedHashMap;
 

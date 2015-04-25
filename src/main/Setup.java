@@ -4,8 +4,9 @@ import db.DB;
 import entities.Item;
 import entities.Magic;
 import entities.Weapon;
+import labels.Items;
+import labels.Labels;
 
-import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
@@ -25,9 +26,9 @@ public class Setup {
      */
     public static ArrayList createItemsBasic() {
 
-        Item item_1 = new Item(Labels.itemNameHealthPotion, "Restores 200HP", true, true);
-        Item item_2 = new Item(Labels.itemNameElixir, "Removes any negative status effects", true, true);
-        Item item_3 = new Item(Labels.itemNameMagicStone, "Adds 1 point permanently to the " + Labels.magic +" stat", false, true);
+        Item item_1 = new Item(Items.itemNameHealthPotion, "Restores 200HP", true, true);
+        Item item_2 = new Item(Items.itemNameElixir, "Removes any negative status effects", true, true);
+        Item item_3 = new Item(Items.itemNameMagicStone, "Adds 1 point permanently to the " + Labels.magic +" stat", false, true);
         Item item_4 = new Weapon("Rusty Revolver", "An old revolver. It's almost falling to pieces, but can  still put a bullet into somebody", true, false, 12.5, 20.0, null);
         Item item_5 = new Item(".38 Ammo", "Common revolver ammunition", true, false);
 

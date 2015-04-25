@@ -3,7 +3,7 @@ package chars;
 import java.util.LinkedHashMap;
 
 import entities.Magic;
-import main.Labels;
+import labels.Labels;
 import entities.Item;
 
 /**

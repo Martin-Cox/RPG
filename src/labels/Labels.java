@@ -1,4 +1,4 @@
-package main;
+package labels;
 
 import java.lang.reflect.Field;
 
@@ -21,35 +21,6 @@ public class Labels {
     public static final String magic = "Magic";
     public static final String spirit = "Spirit";
     public static final String strength = "Strength";
-
-
-    //Item Names
-    public static final String itemNameHealthPotion = "Health Potion";
-    public static final String itemNameElixir = "Elixir";
-    public static final String itemNameMagicStone = "Magic Stone";
-
-
-    //Item Descriptions
-    public static final String itemDescHealthPotion = "Restores 200HP";
-    public static final String itemDescElixir = "Removes any negative status effects";
-    public static final String itemDescMagicStone = "Adds 1 point permanently to the " + Labels.magic + " stat";
-
-
-    //Item Types
-    public static final String itemTypeWeapon = "Weapon";
-    public static final String itemTypeAmmo = ".38 Revolver Ammo";
-
-
-    //Magic Names
-    public static final String magicNameFireball = "Fireball";
-    public static final String magicNameTornado = "Tornado";
-    public static final String magicNameCure = "Cure";
-
-
-    //Magic Descriptions
-    public static final String magicDescFireball = "A burning ball of fire is launched at a single target";
-    public static final String magicDescTornado = "A deadly tornado does massive damage to all enemies";
-    public static final String magicDescCure = "Restores 200HP";
 
 
     //Elements
