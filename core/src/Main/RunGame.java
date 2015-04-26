@@ -116,5 +116,8 @@ public class RunGame {
         NPC NPC_9 = new NPC();
         System.out.println("NPC is: " + NPC_9.getName());
 
+        NPC NPC_10 = new NPC();
+        System.out.println("NPC is: " + NPC_10.getName());
+
     }
 }
