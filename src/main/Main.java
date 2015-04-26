@@ -107,5 +107,14 @@ public class Main {
         NPC NPC_6 = new NPC();
         System.out.println("NPC is: " + NPC_6.getName());
 
+        NPC NPC_7 = new NPC();
+        System.out.println("NPC is: " + NPC_7.getName());
+
+        NPC NPC_8 = new NPC();
+        System.out.println("NPC is: " + NPC_8.getName());
+
+        NPC NPC_9 = new NPC();
+        System.out.println("NPC is: " + NPC_9.getName());
+
     }
 }
