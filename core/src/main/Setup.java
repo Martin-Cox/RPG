@@ -33,7 +33,7 @@ public class Setup {
         Item item_5 = new Item(".38 Ammo", "Common revolver ammunition", true, false);
         Item item_4 = new RangedWeapon("Rusty Revolver", "An old revolver. It's almost falling to pieces, but can  still put a bullet into somebody", true, false, 12.5, 20.0, null, false, item_5);
 
-        ArrayList<Item> items = new ArrayList<>(
+        ArrayList<Item> items = new ArrayList(
                 Arrays.asList(item_1, item_2, item_3, item_4, item_5));
 
         return items;
@@ -47,7 +47,7 @@ public class Setup {
      */
     public static ArrayList createMagic() {
 
-        ArrayList<Magic> magic = new ArrayList<>();
+        ArrayList<Magic> magic = new ArrayList();
 
         ArrayList<ArrayList> rows = DB.getMagic();
 

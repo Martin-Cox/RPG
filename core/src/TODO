@@ -1,0 +1,19 @@
+Character:
+
+Get the characters quantity for a given magic
+Stats should be out of 255
+Player magic quantity can go up to 255, stats are modified only by the 1st 100, so player is free to use the remaining 155 without worrying about losing stats
+
+
+Affinities:
+e.g. to get magic bonus = magicBaseDamage * ((magStat/100 + elementalAffinity/100) + 1.00)
+
+
+Using Magic
+e.g. Cure at low level = 200 * ((0.6 + 0.00) + 1.00) =  320hp
+
+e.g Cure at max level = 200 * ((2.55 + 2.55) + 1.00) = 1220hp
+
+
+Misc:
+- Use int for performance reason unless value can be null, in which case use Integer

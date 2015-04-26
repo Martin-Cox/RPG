@@ -13,10 +13,10 @@ public class NPC extends Character{
     //TODO: Generate entities according to gender
     //TODO: Get entities according to Race
     //TODO: Get entities from a database
-    ArrayList<String> firstNames = new ArrayList<>(
+    ArrayList<String> firstNames = new ArrayList(
             Arrays.asList("Steve", "Richard", "John", "Bertie", "Alex", "Josh"));
 
-    ArrayList<String> lastNames = new ArrayList<>(
+    ArrayList<String> lastNames = new ArrayList(
             Arrays.asList("Williams", "Cox", "Smith", "Davidson", "Blake", "Richards"));
 
     private String firstName;
