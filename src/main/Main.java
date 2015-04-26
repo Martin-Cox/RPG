@@ -20,7 +20,7 @@ import java.util.Scanner;
  */
 public class Main {
 
-    public static void runGame() {
+    public static void main(String[] args) {
 
         ArrayList items = Setup.createItemsBasic();
         ArrayList magic = Setup.createMagic();
