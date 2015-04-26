@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e3c02fbe-69e1-478a-ac41-3f0967f86e5f" name="Default" comment="Added true support for libGDX">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/Main/RunGame.java" afterPath="$PROJECT_DIR$/core/src/Main/RunGame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="e3c02fbe-69e1-478a-ac41-3f0967f86e5f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/Main/GdxWindow.java" afterPath="$PROJECT_DIR$/core/src/Main/GdxWindow.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RPG.iws" />
@@ -48,12 +47,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RunGame.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RunGame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/Main/RunGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5966102">
-              <caret line="112" column="30" selection-start-line="112" selection-start-column="30" selection-end-line="112" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="119" column="42" selection-start-line="119" selection-start-column="42" selection-end-line="119" selection-end-column="42" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GdxWindow.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/src/Main/GdxWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.54745764">
+              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+              <folding>
+                <element signature="e#328#329#0" expanded="true" />
+                <element signature="e#360#361#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -677,6 +689,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/core/src/Main/RunGame.java" />
+        <option value="$PROJECT_DIR$/core/src/Main/GdxWindow.java" />
       </list>
     </option>
   </component>
@@ -990,7 +1003,13 @@
       <option name="project" value="LOCAL" />
       <updated>1430071292299</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Test commit add new NPC">
+      <created>1430071493502</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1430071493502</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1028,7 +1047,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added true support for libGDX" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added true support for libGDX" />
+    <MESSAGE value="Test commit add new NPC" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test commit add new NPC" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1049,9 +1069,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/Main/RunGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5966102">
-          <caret line="112" column="30" selection-start-line="112" selection-start-column="30" selection-end-line="112" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="119" column="42" selection-start-line="119" selection-start-column="42" selection-end-line="119" selection-end-column="42" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/Main/GdxWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54745764">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+          <folding>
+            <element signature="e#328#329#0" expanded="true" />
+            <element signature="e#360#361#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
