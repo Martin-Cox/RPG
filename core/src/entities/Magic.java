@@ -30,7 +30,7 @@ public class Magic {
      * Create a new magic spell
      *
      * @param Name The name of the spell
-     * @param Description The magic spell's description
+     * @param Description The magic spells description
      * @param CanBeUsedInBattle If true the item can be used in battle
      * @param CanBeUsedInWorld If true the item can be used in the world
      * @param StatModifiers A LinkedHashMap of Stat names and Junction modifier values

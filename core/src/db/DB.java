@@ -18,7 +18,6 @@ public class DB {
      * Retrieves every record in the MAGIC table in the database.
      *
      * @return An ArrayList containing each table row as an ArrayList object
-     * @throws e database connection error
      */
     public static ArrayList<ArrayList> getMagic() {
         try

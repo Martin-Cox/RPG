@@ -163,8 +163,8 @@ public class Character {
         }
         this.magic.put(magic, updatedQuantity);
         try {
-            //If player.getJunctions.contains(Magic) {
-            //this.updateStats();           //PLAYER STATS WILL NEED TO BE UPDATED AFTER PLAYER MAGIC CHANGES AND THAT MAGIC IS JUNCTIONED
+            //If player.getAffinities.contains(Magic) {
+            //this.updateStats();           //PLAYER STATS WILL NEED TO BE UPDATED AFTER PLAYER MAGIC CHANGES AND THAT MAGIC IS AN AFFINITY
             //}
         } catch (Exception e) {
             //Don't really know how to handle this exception :/
@@ -180,7 +180,7 @@ public class Character {
      * @param Weapon The weapon to equip
      */
     public void equipWeapon(String HandToEquip, Weapon Weapon) {
-        if (HandToEquip == Labels.leftHand) {
+        if (HandToEquip.equalsIgnoreCase(Labels.leftHand)) {
             //Equip weapon in left hand
 
             //Remove currently equipped weapon (if any) and place it back into the inventory
@@ -193,7 +193,7 @@ public class Character {
             if (Weapon.getDualHanded()) {
                 this.equippedWeapon_R = Weapon;
             }
-        } else if (HandToEquip == Labels.rightHand) {
+        } else if (HandToEquip.equalsIgnoreCase(Labels.rightHand)) {
             //Equip weapon in right hand
 
             //Remove currently equipped weapon (if any) and place it back into the inventory
