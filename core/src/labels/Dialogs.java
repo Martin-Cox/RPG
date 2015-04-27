@@ -11,7 +11,8 @@ import java.lang.reflect.Field;
  */
 public class Dialogs {
 
-
+    public static final String playerCharacterNameTitle = "What is your characters name?";
+    public static final String playerCharacterNameInitialValue = "Enter a name";
 
     /**
      * Gets the flavour text for a given label

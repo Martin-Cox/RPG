@@ -18,7 +18,7 @@ import java.util.Scanner;
  * @author Martin Cox
  * @since 2015-04-18
  */
-public class RunGame {
+public class RunGame_OLD {
 
     public void runGame() {
 

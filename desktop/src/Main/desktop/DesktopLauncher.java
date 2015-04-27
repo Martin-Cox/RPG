@@ -1,6 +1,7 @@
 package Main.desktop;
 
-import Main.RunGame;
+import Main.RunGame_DialogTest;
+import Main.RunGame_OLD;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import Main.GdxWindow;
@@ -10,7 +11,7 @@ public class DesktopLauncher {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		new LwjglApplication(new GdxWindow(), config);
 
-		RunGame runGame = new RunGame();
+		RunGame_OLD runGame = new RunGame_OLD();
 		runGame.runGame();
 	}
 }

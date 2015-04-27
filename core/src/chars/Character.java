@@ -60,6 +60,55 @@ public class Character {
     public LinkedHashMap<Item, Integer> getInventory() { return this.inventory; }
 
     /**
+     * Sets the characters inventory
+     *
+     * @param newInv LinkedHashMap of Item, Value pairs
+     */
+    public void setInventory(LinkedHashMap<Item, Integer> newInv) { this.inventory = newInv; }
+
+    /**
+     * Updates characters inventory by setting the quantity of a given item
+     *
+     * @param item The item to be updated to the characters inventory
+     * @param quantity The number of this item the player will have in their inventory
+     */
+    public void setItemQuantity(Item item, Integer quantity) {
+        if (quantity >= 0 && quantity <= 255) { this.inventory.put(item, quantity); }
+    }
+
+    /**
+     * Updates characters inventory by adding the item and quantity.
+     * Does not allow the quantity of item in the characters inventory to go below 0.
+     * If a situation does occur where the characters quantity will go below 0, then
+     * the characters quantity is set to 0 instead.
+     *
+     * @param item The magic to be updated/added to the characters inventory
+     * @param quantity The number of this magic to add or remove
+     */
+    public void updateInventory(Item item, Integer quantity) {
+        Integer updatedQuantity;
+        try {
+            updatedQuantity = this.inventory.get(item).intValue() + quantity;
+            if (updatedQuantity < 0)  {updatedQuantity = 0; }
+            if (updatedQuantity > 255)  {updatedQuantity = 255; }
+        } catch(NullPointerException e) {
+            //This just means that the character didn't already have this item in their inventory
+
+            //If character does not have any of the item and we are trying to remove some, then add the item to the inventory but with 0 quantity
+            if (quantity > 0) {
+                if (quantity <= 255) {
+                    updatedQuantity = quantity;
+                } else {
+                    updatedQuantity = 255;
+                }
+            } else {
+                updatedQuantity = 0;
+            }
+        }
+        this.inventory.put(item, updatedQuantity);
+    }
+
+    /**
      * Gets the magic inventory
      *
      * @return LinkedHashMap of the magic inventory with Magic, Quantity pairs
