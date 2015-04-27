@@ -20,11 +20,32 @@ public class Character {
     Weapon equippedWeapon_R;
 
     /**
+     * Creates a new instance of a character
      *
      * @param Name The full name of the character
      * @param Stats LinkedHashMap of Stat names and value pairs
      * @param Inventory LinkedHashMap of Items and quantity pairs
      * @param Magic LinkedHashMap of Magic and quantity pairs
+     */
+    public Character(String Name, LinkedHashMap Stats, LinkedHashMap Inventory, LinkedHashMap Magic) {
+        this.name = Name;
+        if (Stats == null) { Stats = new LinkedHashMap(); }
+        if (Inventory == null) { Inventory = new LinkedHashMap(); }
+        if (Magic == null) { Magic = new LinkedHashMap(); }
+        this.stats = Stats;
+        this.inventory = Inventory;
+        this.magic = Magic;
+    }
+
+    /**
+     * Creates a new instance of a character
+     *
+     * @param Name The full name of the character
+     * @param Stats LinkedHashMap of Stat names and value pairs
+     * @param Inventory LinkedHashMap of Items and quantity pairs
+     * @param Magic LinkedHashMap of Magic and quantity pairs
+     * @param EquippedWeapon_L A weapon to be equipped by default in this characters left hand
+     * @param EquippedWeapon_R A weapon to be equipped by default in this characters right hand
      */
     public Character(String Name, LinkedHashMap Stats, LinkedHashMap Inventory, LinkedHashMap Magic, Weapon EquippedWeapon_L, Weapon EquippedWeapon_R) {
         this.name = Name;

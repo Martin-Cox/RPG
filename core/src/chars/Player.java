@@ -17,7 +17,7 @@ public class Player extends Character{
      */
     public Player(String Name) {
 
-        super(Name, null, null, null, null, null);
+        super(Name, null, null, null);
 
         //Players starting stats
         super.stats.put(Labels.HP, 400);

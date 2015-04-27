@@ -26,7 +26,7 @@ public class NPC extends Character {
 
     public NPC() {
 
-        super("", null, null, null, null, null);
+        super("", null, null, null);
 
         Random random = new Random();
         int index = random.nextInt(firstNames.size());
