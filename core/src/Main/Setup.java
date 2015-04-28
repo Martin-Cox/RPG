@@ -3,6 +3,7 @@ package Main;
 import db.DB;
 import entities.Item;
 import entities.Magic;
+import entities.MagicList;
 import entities.RangedWeapon;
 import labels.Items;
 import labels.Labels;
@@ -41,12 +42,10 @@ public class Setup {
 
     /**
      * Retrieves all magic entries in the DB and converts them into an ArrayList of Magic objects.
-     *
-     * @return Arraylist of magic objects
      */
-    public static ArrayList createMagic() {
+    public static MagicList createMagic() {
 
-        ArrayList<Magic> magic = new ArrayList<>();
+        MagicList magicList = new MagicList();
 
         ArrayList<ArrayList> rows = DB.getMagic();
 
@@ -87,9 +86,8 @@ public class Setup {
 
             //Create a magicItem and add it to the ArrayList
             Magic magicItem = new Magic(name, desc, battleUse, worldUse, statModifiers, element, statusEffectName, baseDamage, statusEffectBaseChance);
-            magic.add(magicItem);
+            magicList.getMagicList().add(magicItem);
         }
-
-        return magic;
+        return magicList;
     }
 }

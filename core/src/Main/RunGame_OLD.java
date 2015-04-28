@@ -4,6 +4,7 @@ import chars.NPC;
 import chars.Player;
 import entities.Item;
 import entities.Magic;
+import entities.MagicList;
 import entities.Weapon;
 import labels.Labels;
 
@@ -23,7 +24,7 @@ public class RunGame_OLD {
     public void runGame() {
 
         ArrayList items = Setup.createItemsBasic();
-        ArrayList magic = Setup.createMagic();
+        MagicList magicList = Setup.createMagic();
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your characters name: ");
@@ -64,8 +65,9 @@ public class RunGame_OLD {
         System.out.println();
         System.out.println("You don't know any magic! Lets teach you some spells");
 
-        player.updateMagic((Magic) magic.get(0), 8);
-        player.updateMagic((Magic) magic.get(2), 3);
+
+        player.updateMagic(magicList.getMagicFromListByMagicName("Fireball"), 8);
+        player.updateMagic(magicList.getMagicFromListByMagicName(labels.Magic.magicNameCure), 3);
 
         System.out.println();
         System.out.println("You have " + player.getMagic().size() + " magic in your inventory. They are as follows: ");
@@ -77,9 +79,9 @@ public class RunGame_OLD {
         }
 
         System.out.println();
-        System.out.println("Changing the amount of " + ((Magic) magic.get(1)).getName() + " in your inventory");
+        System.out.println("Changing the amount of " + magicList.getMagicFromListByMagicName("Tornado") + " in your inventory");
 
-        player.updateMagic((Magic) magic.get(1), -3);
+        player.updateMagic(magicList.getMagicFromListByMagicName(labels.Magic.magicNameTornado), -3);
 
 
         System.out.println("Equipping " + ((Item) items.get(3)).getName() + " in your right hand");
