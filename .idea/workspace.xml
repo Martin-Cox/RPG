@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3c02fbe-69e1-478a-ac41-3f0967f86e5f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/entities/MagicList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/Main/RunGame_OLD.java" afterPath="$PROJECT_DIR$/core/src/Main/RunGame_OLD.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/Main/Setup.java" afterPath="$PROJECT_DIR$/core/src/Main/Setup.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/entities/ItemList.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/entities/MagicList.java" afterPath="$PROJECT_DIR$/core/src/entities/MagicList.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RPG.iws" />
@@ -39,16 +38,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Character.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/chars/Character.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="44" column="31" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/chars/Player.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -93,7 +82,49 @@
         <entry file="file://$PROJECT_DIR$/core/src/Main/RunGame_OLD.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="76" column="45" selection-start-line="76" selection-start-column="45" selection-end-line="76" selection-end-column="45" />
+              <caret line="64" column="29" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MagicList.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/entities/MagicList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#342#343#0" expanded="true" />
+                <element signature="e#391#392#0" expanded="true" />
+                <element signature="e#430#431#0" expanded="true" />
+                <element signature="e#462#463#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ItemList.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/src/entities/ItemList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5704698">
+              <caret line="30" column="52" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#339#340#0" expanded="true" />
+                <element signature="e#387#388#0" expanded="true" />
+                <element signature="e#425#426#0" expanded="true" />
+                <element signature="e#456#457#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Items.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/labels/Items.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="45" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -117,22 +148,6 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MagicList.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/entities/MagicList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48657718">
-              <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#342#343#0" expanded="true" />
-                <element signature="e#391#392#0" expanded="true" />
-                <element signature="e#430#431#0" expanded="true" />
-                <element signature="e#462#463#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -778,6 +793,7 @@
         <option value="$PROJECT_DIR$/core/src/Main/Setup.java" />
         <option value="$PROJECT_DIR$/core/src/Main/RunGame_OLD.java" />
         <option value="$PROJECT_DIR$/core/src/entities/MagicList.java" />
+        <option value="$PROJECT_DIR$/core/src/entities/ItemList.java" />
       </list>
     </option>
   </component>
@@ -1228,7 +1244,13 @@
       <option name="project" value="LOCAL" />
       <updated>1430152666685</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added magicList entity as a master list to store the magic objects used. Can use getters to get magic from only Magic Name etc.">
+      <created>1430250359365</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1430250359365</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1279,7 +1301,8 @@
     <MESSAGE value="Added set methods to character Inventory/Items that already exists for character magic" />
     <MESSAGE value="Various spelling fixes, code cleanup." />
     <MESSAGE value="Added second constructor for characters with no equipped weapons. Fixed Javadoc for Character constructors." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added second constructor for characters with no equipped weapons. Fixed Javadoc for Character constructors." />
+    <MESSAGE value="Added magicList entity as a master list to store the magic objects used. Can use getters to get magic from only Magic Name etc." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added magicList entity as a master list to store the magic objects used. Can use getters to get magic from only Magic Name etc." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1398,6 +1421,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.37457627">
           <caret line="13" column="62" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1474,14 +1498,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/Main/RunGame_OLD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="76" column="45" selection-start-line="76" selection-start-column="45" selection-end-line="76" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/Main/Setup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1490,16 +1506,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/Main/RunGame_OLD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="64" column="29" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/entities/MagicList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48657718">
-          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#342#343#0" expanded="true" />
             <element signature="e#391#392#0" expanded="true" />
             <element signature="e#430#431#0" expanded="true" />
             <element signature="e#462#463#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/labels/Items.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="45" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/entities/ItemList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5704698">
+          <caret line="30" column="52" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#339#340#0" expanded="true" />
+            <element signature="e#387#388#0" expanded="true" />
+            <element signature="e#425#426#0" expanded="true" />
+            <element signature="e#456#457#0" expanded="true" />
           </folding>
         </state>
       </provider>

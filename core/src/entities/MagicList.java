@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * All magic in the game will be taken from a master list. That way we can get magic using getters from properties such as name etc.
  *
  * @author Martin Cox
- * @since 2015-04-18
+ * @since 2015-04-28
  */
 public class MagicList {
 
@@ -60,5 +60,4 @@ public class MagicList {
 
         return null;
     }
-
 }
