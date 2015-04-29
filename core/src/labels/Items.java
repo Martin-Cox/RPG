@@ -20,6 +20,13 @@ public class Items {
     public static final String itemDescElixir = "Removes any negative status effects";
     public static final String itemDescMagicStone = "Adds 1 point permanently to the " + Labels.magic + " stat";
 
+
+    //Item Types
+    public static final String itemtypeConsumable = "Consumable";
+    public static final String itemtypeWeapon = "Melee Weapon";
+    public static final String itemtypeRangedWeapon = "Ranged Weapon";
+    public static final String itemtypeAmmo = "Ammo";
+
     /**
      * Gets the flavour text for a given label
      *
