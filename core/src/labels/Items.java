@@ -20,12 +20,27 @@ public class Items {
     public static final String itemDescElixir = "Removes any negative status effects";
     public static final String itemDescMagicStone = "Adds 1 point permanently to the " + Labels.magic + " stat";
 
-
     //Item Types
+    public static final String itemtypeItem = "Item";
     public static final String itemtypeConsumable = "Consumable";
     public static final String itemtypeWeapon = "Melee Weapon";
     public static final String itemtypeRangedWeapon = "Ranged Weapon";
     public static final String itemtypeAmmo = "Ammo";
+
+
+    //Weapon Names
+    public static final String weaponNameRustyRevolver = "Rusty Revolver";
+    public static final String weaponNameRustyDagger = "Rusty Dagger";
+    //Weapon Descriptions
+    public static final String weaponDescRustyRevolver = "An old revolver. It's almost falling to pieces, but can  still put a bullet into somebody";
+    public static final String weaponDescRustyDagger = "An old and rusty iron dagger";
+
+
+    //Ammo Names
+    public static final String ammoName38Ammo = ".38 Ammo";
+    //Ammo Descriptions
+    public static final String ammoDesc38Ammo = "Common revolver ammunition";
+
 
     /**
      * Gets the flavour text for a given label

@@ -1,10 +1,7 @@
 package Main;
 
 import db.DB;
-import entities.Item;
-import entities.Magic;
-import entities.MagicList;
-import entities.RangedWeapon;
+import entities.*;
 import labels.Items;
 import labels.Labels;
 
@@ -25,23 +22,89 @@ public class Setup {
      *
      * @return Arraylist of item objects
      */
-    public static ArrayList createItemsBasic() {
+    public static ItemList createItems() {
 
-        Item item_1 = new Item(Items.itemNameHealthPotion, "Restores 200HP", true, true);
-        Item item_2 = new Item(Items.itemNameElixir, "Removes any negative status effects", true, true);
-        Item item_3 = new Item(Items.itemNameMagicStone, "Adds 1 point permanently to the " + Labels.magic +" stat", false, true);
-        Item item_5 = new Item(".38 Ammo", "Common revolver ammunition", true, false);
-        Item item_4 = new RangedWeapon("Rusty Revolver", "An old revolver. It's almost falling to pieces, but can  still put a bullet into somebody", true, false, 12.5, 20.0, null, false, item_5);
+        ItemList itemList = new ItemList();
 
-        ArrayList<Item> items = new ArrayList<>(
-                Arrays.asList(item_1, item_2, item_3, item_4, item_5));
+        ArrayList<ArrayList> rows = DB.getItems();
 
-        return items;
+        //TODO: Will need to sort rows so that ammo type items are made before RangedWeapons
+
+
+        for (int i = 0; i < rows.size(); i++) {
+            ArrayList<ArrayList> row = rows.get(i);
+
+            //Get Values
+            String[] stringRow = new String[row.size()];
+            stringRow = row.toArray(stringRow);
+
+            String name = stringRow[0];
+            String type = stringRow[1];
+            String desc = stringRow[2];
+
+            Boolean battleUse = false;
+            Boolean worldUse = false;
+            if (stringRow[3].equalsIgnoreCase("true")) {
+                battleUse = true;
+            }
+            if (stringRow[4].equalsIgnoreCase("true")) {
+                worldUse = true;
+            }
+            //String element = stringRow[13];
+            double baseDamage = Double.parseDouble(stringRow[5]);
+            double durability;
+            //TODO: Remove this, it's only because DURABILITY for all records atm is null so rs.getString in DB.java doesn't populate field [6]
+            try {
+                durability = Double.parseDouble(stringRow[6]);
+            } catch (Exception e) {
+                durability = 0;
+            }
+
+            Boolean twoHanded = false;
+            if (stringRow[7].equalsIgnoreCase("true")) {
+                twoHanded = true;
+            }
+
+            String ammo = stringRow[8];
+            String statusEffectName = stringRow[18];
+
+            //Assign Stat Values
+            LinkedHashMap<String, Double> statModifiers = new LinkedHashMap();
+            statModifiers.put(Labels.agility, Double.parseDouble(stringRow[9]));
+            statModifiers.put(Labels.defence, Double.parseDouble(stringRow[10]));
+            statModifiers.put(Labels.evasion, Double.parseDouble(stringRow[11]));
+            statModifiers.put(Labels.HP, Double.parseDouble(stringRow[12]));
+            statModifiers.put(Labels.hitRate, Double.parseDouble(stringRow[13]));
+            statModifiers.put(Labels.luck, Double.parseDouble(stringRow[14]));
+            statModifiers.put(Labels.magic, Double.parseDouble(stringRow[15]));
+            statModifiers.put(Labels.spirit, Double.parseDouble(stringRow[16]));
+            statModifiers.put(Labels.strength, Double.parseDouble(stringRow[17]));
+
+            Item item = null;
+            String typeValue = (String) Items.getLabelValue(type);
+            if (typeValue.equalsIgnoreCase(Items.itemtypeConsumable)) {
+                item = new Consumable(name, desc, battleUse, worldUse, baseDamage, statusEffectName);
+            } else if (typeValue.equalsIgnoreCase(Items.itemtypeWeapon)) {
+                item = new Weapon(name, desc, battleUse, worldUse, baseDamage, durability, statModifiers, twoHanded);
+            } else if (typeValue.equalsIgnoreCase(Items.itemtypeRangedWeapon)) {
+                item = new RangedWeapon(name, desc, battleUse, worldUse, baseDamage, durability, statModifiers, twoHanded, null);
+                //item.setAmmo
+            } else if (typeValue.equalsIgnoreCase(Items.itemtypeItem)) {
+                item = new Item(name, desc, battleUse, worldUse);
+            }
+            //else if (typeValue.equalsIgnoreCase(Items.itemtypeAmmo) {
+            //TODO: Add Ammo constructor
+
+            itemList.getItemList().add(item);
+        }
+        return itemList;
     }
 
 
     /**
-     * Retrieves all magic entries in the DB and converts them into an ArrayList of Magic objects.
+     * Retrieves all magic entries in the DB and converts them into an list of Magic objects.
+     *
+     * @return MagicList A list of all the magic
      */
     public static MagicList createMagic() {
 

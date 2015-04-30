@@ -50,7 +50,7 @@ public class ItemList {
      * @param itemName the name of the item
      * @return If the item exists then the item is returned, otherwise null
      */
-    public Item getMagicFromListByMagicName(String itemName) {
+    public Item getItemFromListByItemName(String itemName) {
         for (int i = 0; i < itemList.size(); i++) {
             Item currItem = (Item) itemList.get(i);
             if (currItem.getName().equalsIgnoreCase(itemName)) {

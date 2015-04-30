@@ -2,13 +2,10 @@ package Main;
 
 import chars.NPC;
 import chars.Player;
-import entities.Item;
-import entities.Magic;
-import entities.MagicList;
-import entities.Weapon;
+import entities.*;
+import labels.Items;
 import labels.Labels;
 
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -23,7 +20,7 @@ public class RunGame_OLD {
 
     public void runGame() {
 
-        ArrayList items = Setup.createItemsBasic();
+        ItemList itemList = Setup.createItems();
         MagicList magicList = Setup.createMagic();
 
         Scanner scanner = new Scanner(System.in);
@@ -47,11 +44,12 @@ public class RunGame_OLD {
         System.out.println("You have nothing in your inventory! Lets give you some basic items");
 
         LinkedHashMap<Item, Integer> playerInventory = player.getInventory();
-        playerInventory.put((Item) items.get(0), 3);
-        playerInventory.put((Item) items.get(1), 2);
-        playerInventory.put((Item) items.get(2), 6);
-        playerInventory.put((Item) items.get(3), 1);
-        playerInventory.put((Item) items.get(4), 40);
+        playerInventory.put(itemList.getItemFromListByItemName(Items.itemNameHealthPotion), 3);
+        playerInventory.put(itemList.getItemFromListByItemName(Items.itemNameElixir), 5);
+        playerInventory.put(itemList.getItemFromListByItemName(Items.itemNameMagicStone), 3);
+        playerInventory.put(itemList.getItemFromListByItemName(Items.weaponNameRustyDagger), 1);
+        playerInventory.put(itemList.getItemFromListByItemName(Items.weaponNameRustyRevolver), 1);
+
 
         System.out.println();
         System.out.println("You have " + player.getInventory().size() + " item/s in your inventory. They are as follows: ");
@@ -84,8 +82,8 @@ public class RunGame_OLD {
         player.updateMagic(magicList.getMagicFromListByMagicName(labels.Magic.magicNameTornado), -3);
 
 
-        System.out.println("Equipping " + ((Item) items.get(3)).getName() + " in your right hand");
-        player.equipWeapon(Labels.rightHand, (Weapon) items.get(3));
+        System.out.println("Equipping " + itemList.getItemFromListByItemName(Items.weaponNameRustyDagger) + " in your right hand");
+        player.equipWeapon(Labels.rightHand, (Weapon) itemList.getItemFromListByItemName(Items.weaponNameRustyDagger));
 
 
         System.out.println();

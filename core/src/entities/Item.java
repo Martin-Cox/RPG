@@ -23,8 +23,8 @@ public class Item {
      * @param CanBeUsedInWorld If true the item can be used in the world
      */
     public Item(String Name, String Description, boolean CanBeUsedInBattle, boolean CanBeUsedInWorld) {
-        name = Name;
-        description = Description;
+        name = labels.Items.getLabelValue(Name).toString();
+        description = labels.Items.getLabelValue(Description).toString();
         canBeUsedInBattle = CanBeUsedInBattle;
         canBeUsedInWorld = CanBeUsedInWorld;
     }
