@@ -1100,3 +1100,6 @@ INSERT INTO ITEM(ID, NAME, TYPE, DESCRIPTION, BATTLE_USE, WORLD_USE, BASE_DAMAGE
 	at org.h2.server.web.WebThread.process(WebThread.java:168)
 	at org.h2.server.web.WebThread.run(WebThread.java:93)
 	at java.lang.Thread.run(Unknown Source)
+04-30 21:12:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "UPDATE ITEM SET DURABILITY 18.5[*] WHERE ID = 5"; expected "., ="; SQL statement:
+UPDATE ITEM SET DURABILITY 18.5 WHERE ID = 5 [42001-187]

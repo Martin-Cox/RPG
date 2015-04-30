@@ -77,12 +77,12 @@ public class RunGame_OLD {
         }
 
         System.out.println();
-        System.out.println("Changing the amount of " + magicList.getMagicFromListByMagicName("Tornado") + " in your inventory");
+        System.out.println("Changing the amount of " + magicList.getMagicFromListByMagicName("Tornado").getName() + " in your inventory");
 
         player.updateMagic(magicList.getMagicFromListByMagicName(labels.Magic.magicNameTornado), -3);
 
 
-        System.out.println("Equipping " + itemList.getItemFromListByItemName(Items.weaponNameRustyDagger) + " in your right hand");
+        System.out.println("Equipping " + itemList.getItemFromListByItemName(Items.weaponNameRustyDagger).getName() + " in your right hand");
         player.equipWeapon(Labels.rightHand, (Weapon) itemList.getItemFromListByItemName(Items.weaponNameRustyDagger));
 
 

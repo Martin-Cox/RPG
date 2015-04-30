@@ -52,13 +52,7 @@ public class Setup {
             }
             //String element = stringRow[13];
             double baseDamage = Double.parseDouble(stringRow[5]);
-            double durability;
-            //TODO: Remove this, it's only because DURABILITY for all records atm is null so rs.getString in DB.java doesn't populate field [6]
-            try {
-                durability = Double.parseDouble(stringRow[6]);
-            } catch (Exception e) {
-                durability = 0;
-            }
+            double durability = Double.parseDouble(stringRow[6]);
 
             Boolean twoHanded = false;
             if (stringRow[7].equalsIgnoreCase("true")) {
