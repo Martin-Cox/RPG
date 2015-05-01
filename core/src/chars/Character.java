@@ -5,6 +5,7 @@ import entities.Magic;
 import entities.Weapon;
 import labels.Labels;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 /**
@@ -18,6 +19,7 @@ public class Character {
     LinkedHashMap<Magic, Integer> magic = new LinkedHashMap();
     Weapon equippedWeapon_L;
     Weapon equippedWeapon_R;
+    ArrayList<String> statusEffects;
 
     /**
      * Creates a new instance of a character
@@ -227,6 +229,47 @@ public class Character {
             if (Weapon.getDualHanded()) {
                 this.equippedWeapon_L = Weapon;
             }
+        }
+    }
+
+    /**
+     * Gets the characters status effects
+     *
+     * @return ArrayList of status effects as Strings
+     */
+    public ArrayList<String> getStatusEffects() { return this.statusEffects; }
+
+    /**
+     * Sets the characters status effects
+     *
+     * @param StatusEffects ArrayList of status effects as Strings
+     */
+    public void setStatusEffects(ArrayList<String> StatusEffects) { this.statusEffects = StatusEffects; }
+
+    /**
+     * Removes all status effects
+     */
+    public void removeStatusEffects() { this.statusEffects = new ArrayList<String>(); }
+
+    /**
+     * Removes a status effect
+     *
+     * @param StatusEffect A status effect to remove from this character
+     */
+    public void removeStatusEffect(String StatusEffect) {
+        if (this.statusEffects.contains(StatusEffect)) {
+            this.statusEffects.remove(StatusEffect);
+        }
+    }
+
+    /**
+     * Adds a status effect
+     *
+     * @param StatusEffect A status effect to give to this character
+     */
+    public void addStatusEffect(String StatusEffect) {
+        if (!this.statusEffects.contains(StatusEffect)) {
+            this.statusEffects.add(StatusEffect);
         }
     }
 }
