@@ -44,12 +44,18 @@ public class RunGame_OLD {
         System.out.println();
         System.out.println("You have nothing in your inventory! Lets give you some basic items");
 
-        LinkedHashMap<Item, Integer> playerInventory = player.getInventory();
+        /*LinkedHashMap<Item, Integer> playerInventory = player.getInventory();
         playerInventory.put(itemList.getItemFromListByItemName(Items.itemNameHealthPotion), 3);
         playerInventory.put(itemList.getItemFromListByItemName(Items.itemNameElixir), 5);
         playerInventory.put(itemList.getItemFromListByItemName(Items.itemNameMagicStone), 3);
         playerInventory.put(itemList.getItemFromListByItemName(Items.weaponNameRustyDagger), 1);
-        playerInventory.put(itemList.getItemFromListByItemName(Items.weaponNameRustyRevolver), 1);
+        playerInventory.put(itemList.getItemFromListByItemName(Items.weaponNameRustyRevolver), 1);*/
+
+        player.updateInventory(itemList.getItemFromListByItemName(Items.itemNameHealthPotion), 3);
+        player.updateInventory(itemList.getItemFromListByItemName(Items.itemNameElixir), 5);
+        player.updateInventory(itemList.getItemFromListByItemName(Items.itemNameMagicStone), 3);
+        player.updateInventory(itemList.getItemFromListByItemName(Items.weaponNameRustyDagger), 1);
+        player.updateInventory(itemList.getItemFromListByItemName(Items.weaponNameRustyRevolver), 1);
 
 
         System.out.println();
