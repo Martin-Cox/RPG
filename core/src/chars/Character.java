@@ -203,6 +203,8 @@ public class Character {
      * @param Weapon The weapon to equip
      */
     public void equipWeapon(String HandToEquip, Weapon Weapon) {
+        //TODO: Need to check if item is in the characters inventory first
+        //TODO: If character already has an equipped weapon in that hand, then need to get that weapon Object and add 1 to the characters inventory
         if (HandToEquip.equalsIgnoreCase(Labels.leftHand)) {
             //Equip weapon in left hand
 
