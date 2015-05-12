@@ -46,7 +46,7 @@ public class Magic {
         canBeUsedInWorld = CanBeUsedInWorld;
         statModifiers = StatModifiers;
         element =  Labels.getLabelValue(Element).toString();
-        statusEffect = Labels.getLabelValue(StatusEffect).toString();   //TODO: Get status effect from a list of status effects
+        statusEffect = labels.Status.getLabelValue(StatusEffect).toString();   //TODO: Get status effect from a list of status effects
         baseDamage = BaseDamage;
         statusEffectBaseChance = StatusEffectBaseChance;
     }

@@ -29,14 +29,6 @@ public class Labels {
     public static final String elementWind = "Wind";
 
 
-    //Status Effects
-    public static final String statusBurning = "Burning";
-    public static final String statusHealing = "Healing";
-    public static final String statusBoostStat = "Boost Stat";
-    public static final String statusRemoveStatusEffects = "Remove Status Effects";
-    public static final String statusNone = "None";
-
-
     //Misc labels
     public static final String leftHand = "Left Hand";
     public static final String rightHand = "Right Hand";
