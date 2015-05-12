@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e3c02fbe-69e1-478a-ac41-3f0967f86e5f" name="Default" comment="Added Labels.Status in preparation for incoming Status effect objects from DB">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/labels/Status.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/labels/Labels.java" afterPath="$PROJECT_DIR$/core/src/labels/Labels.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/entities/Magic.java" afterPath="$PROJECT_DIR$/core/src/entities/Magic.java" />
+    <list default="true" id="e3c02fbe-69e1-478a-ac41-3f0967f86e5f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DB/db.mv.db" afterPath="$PROJECT_DIR$/DB/db.mv.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DB/db.trace.db" afterPath="$PROJECT_DIR$/DB/db.trace.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -75,26 +72,26 @@
         <entry file="file://$PROJECT_DIR$/core/src/labels/Labels.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="50" selection-end-column="5" />
+              <caret line="27" column="42" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Status.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Status.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/labels/Status.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.8677966">
+              <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RunGame_OLD.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RunGame_OLD.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/Main/RunGame_OLD.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.3254237">
+            <state vertical-scroll-proportion="0.0">
               <caret line="129" column="1" selection-start-line="129" selection-start-column="1" selection-end-line="129" selection-end-column="1" />
               <folding />
             </state>
@@ -1337,7 +1334,13 @@
       <option name="project" value="LOCAL" />
       <updated>1431451300522</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added Labels.Status in preparation for incoming Status effect objects from DB">
+      <created>1431452741423</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1431452741423</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1351,7 +1354,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.329718" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1785,14 +1788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/labels/Labels.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="50" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/labels/Magic.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1801,18 +1796,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/labels/Status.java">
+    <entry file="file://$PROJECT_DIR$/core/src/Main/RunGame_OLD.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+          <caret line="129" column="1" selection-start-line="129" selection-start-column="1" selection-end-line="129" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/Main/RunGame_OLD.java">
+    <entry file="file://$PROJECT_DIR$/core/src/labels/Labels.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3254237">
-          <caret line="129" column="1" selection-start-line="129" selection-start-column="1" selection-end-line="129" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="42" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/labels/Status.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8677966">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
           <folding />
         </state>
       </provider>
