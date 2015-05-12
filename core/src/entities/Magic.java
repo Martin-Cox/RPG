@@ -19,7 +19,7 @@ public class Magic {
     private boolean canBeUsedInWorld;       //Can the item be used in the world
 
     private String element;
-    private String statusEffectName;
+    private String statusEffect;
 
     private double baseDamage;
     private double statusEffectBaseChance;
@@ -35,18 +35,18 @@ public class Magic {
      * @param CanBeUsedInWorld If true the item can be used in the world
      * @param StatModifiers A LinkedHashMap of Stat names and Junction modifier values
      * @param Element The element this magic corresponds to
-     * @param StatusEffectName The name (if any) of the status effect this magic may cause
+     * @param StatusEffect The object of the status effect this magic may cause
      * @param BaseDamage The base damage this magic does (before being modified by any bonuses/resistances)
      * @param StatusEffectBaseChance The base chance this magic has of causing the status effect
      */
-    public Magic(String Name, String Description, boolean CanBeUsedInBattle, boolean CanBeUsedInWorld, LinkedHashMap StatModifiers, String Element, String StatusEffectName, double BaseDamage, double StatusEffectBaseChance) {
+    public Magic(String Name, String Description, boolean CanBeUsedInBattle, boolean CanBeUsedInWorld, LinkedHashMap StatModifiers, String Element, String StatusEffect, double BaseDamage, double StatusEffectBaseChance) {
         name = labels.Magic.getLabelValue(Name).toString();
         description = labels.Magic.getLabelValue(Description).toString();
         canBeUsedInBattle = CanBeUsedInBattle;
         canBeUsedInWorld = CanBeUsedInWorld;
         statModifiers = StatModifiers;
         element =  Labels.getLabelValue(Element).toString();
-        statusEffectName = Labels.getLabelValue(StatusEffectName).toString();
+        statusEffect = Labels.getLabelValue(StatusEffect).toString();   //TODO: Get status effect from a list of status effects
         baseDamage = BaseDamage;
         statusEffectBaseChance = StatusEffectBaseChance;
     }
