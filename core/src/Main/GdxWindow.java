@@ -18,7 +18,7 @@ public class GdxWindow extends ApplicationAdapter {
 		Gdx.gl.glClearColor(1, 1, 1, 1);
 
 		batch.begin();
-		font.draw(batch, "Hello World!", 100, 400);
+		font.draw(batch, "Hello World! Test custom font :)", 100, 400);
 		batch.end();
 	}
 
