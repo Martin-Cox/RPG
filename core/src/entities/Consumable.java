@@ -6,7 +6,7 @@ package entities;
 public class Consumable extends Item {
 
     double baseDamage;
-    String statusEffect;
+    StatusEffect statusEffect;
 
     /**
      * Crates a new instance of a consumable item.
@@ -18,10 +18,10 @@ public class Consumable extends Item {
      * @param BaseDamage Base damage of the weapon before any modifiers
      * @param StatusEffect The status effect this item applies (if any)
      */
-    public Consumable (String Name, String Description, Boolean CanBeUsedInBattle, Boolean CanBeUsedInWorld, Double BaseDamage, String StatusEffect) {
+    public Consumable (String Name, String Description, Boolean CanBeUsedInBattle, Boolean CanBeUsedInWorld, Double BaseDamage, StatusEffect StatusEffect) {
         super(Name, Description, CanBeUsedInBattle, CanBeUsedInWorld);
         this.baseDamage = BaseDamage;
-        this.statusEffect = labels.Labels.getLabelValue(StatusEffect).toString();
+        this.statusEffect = StatusEffect;
     }
 
 }

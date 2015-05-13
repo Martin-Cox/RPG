@@ -25,6 +25,7 @@ public class Setup {
     public static ItemList createItems() {
 
         ItemList itemList = new ItemList();
+        StatusEffectList statusEffectList = createStatusEffects();
 
         ArrayList<ArrayList> rows = DB.getItems();
 
@@ -61,6 +62,7 @@ public class Setup {
 
             String ammo = stringRow[8];
             String statusEffectName = stringRow[18];
+            StatusEffect statusEffect = statusEffectList.getStatusEffectFromListByLabel(statusEffectName);
 
             //Assign Stat Values
             LinkedHashMap<String, Double> statModifiers = new LinkedHashMap();
@@ -77,7 +79,7 @@ public class Setup {
             Item item = null;
             String typeValue = (String) Items.getLabelValue(type);
             if (typeValue.equalsIgnoreCase(Items.itemtypeConsumable)) {
-                item = new Consumable(name, desc, battleUse, worldUse, baseDamage, statusEffectName);
+                item = new Consumable(name, desc, battleUse, worldUse, baseDamage, statusEffect);
             } else if (typeValue.equalsIgnoreCase(Items.itemtypeWeapon)) {
                 item = new Weapon(name, desc, battleUse, worldUse, baseDamage, durability, statModifiers, twoHanded);
             } else if (typeValue.equalsIgnoreCase(Items.itemtypeRangedWeapon)) {

@@ -1345,3 +1345,9 @@ INSERT INTO STATUS_EFFECT VALUES(1, 'statusNameBurning', "statusDescBurning", "e
 	at org.h2.server.web.WebThread.process(WebThread.java:168)
 	at org.h2.server.web.WebThread.run(WebThread.java:93)
 	at java.lang.Thread.run(Unknown Source)
+05-13 21:58:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER ITEM[*] ALTER COLUMN STATUS_EFFECT = 'statusNameBoostStat' WHERE ID=3"; expected "TABLE, USER, INDEX, SCHEMA, SEQUENCE, VIEW"; SQL statement:
+ALTER ITEM ALTER COLUMN STATUS_EFFECT = 'statusNameBoostStat' WHERE ID=3 [42001-187]
+05-13 21:58:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER ITEM[*] UPDATE COLUMN STATUS_EFFECT = 'statusNameBoostStat' WHERE ID=3"; expected "TABLE, USER, INDEX, SCHEMA, SEQUENCE, VIEW"; SQL statement:
+ALTER ITEM UPDATE COLUMN STATUS_EFFECT = 'statusNameBoostStat' WHERE ID=3 [42001-187]
