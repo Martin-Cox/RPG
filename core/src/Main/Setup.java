@@ -147,4 +147,61 @@ public class Setup {
         }
         return magicList;
     }
+
+    /**
+     * Retrieves all status effect entries in the DB and converts them into an list of Status Effect objects.
+     *
+     * @return StatusEffectList A list of all the status effects
+     */
+    public static StatusEffectList createStatusEffects() {
+
+        StatusEffectList statusEffectList = new StatusEffectList();
+
+        ArrayList<ArrayList> rows = DB.getStatusEffects();
+
+        for (int i = 0; i < rows.size(); i++) {
+            ArrayList<ArrayList> row = rows.get(i);
+
+            //Get Values
+            String[] stringRow = new String[row.size()];
+            stringRow = row.toArray(stringRow);
+
+            String name = stringRow[0];
+            String desc = stringRow[1];
+            String element = stringRow[2];
+            double baseDamage = Double.parseDouble(stringRow[3]);
+            int numTurns;
+            try {
+                numTurns = Integer.parseInt(stringRow[4]);
+            } catch (Exception e) {
+                //If NUMBER_OF_TURNS in DB was null, then set it to -1 so we can choose constructor later to randomly gen numTurns
+                numTurns = -1;
+            }
+
+
+            //Assign Stat Values
+            LinkedHashMap<String, Double> statModifiers = new LinkedHashMap();
+            statModifiers.put(Labels.agility, Double.parseDouble(stringRow[5]));
+            statModifiers.put(Labels.defence, Double.parseDouble(stringRow[6]));
+            statModifiers.put(Labels.evasion, Double.parseDouble(stringRow[7]));
+            statModifiers.put(Labels.hitRate, Double.parseDouble(stringRow[8]));
+            statModifiers.put(Labels.luck, Double.parseDouble(stringRow[9]));
+            statModifiers.put(Labels.magic, Double.parseDouble(stringRow[10]));
+            statModifiers.put(Labels.spirit, Double.parseDouble(stringRow[11]));
+            statModifiers.put(Labels.strength, Double.parseDouble(stringRow[12]));
+            statModifiers.put(Labels.HP, Double.parseDouble(stringRow[13]));
+
+
+            //Create a statusEffectItem and add it to the ArrayList
+            StatusEffect statusEffectItem;
+            if (numTurns != -1) {
+                statusEffectItem = new StatusEffect(name, desc, element, baseDamage, statModifiers, numTurns);
+            } else {
+                statusEffectItem = new StatusEffect(name, desc, element, baseDamage, statModifiers);
+            }
+
+            statusEffectList.getStatusEffectList().add(statusEffectItem);
+        }
+        return statusEffectList;
+    }
 }

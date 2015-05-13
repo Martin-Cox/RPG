@@ -2,6 +2,7 @@ package entities;
 
 import labels.Labels;
 
+import java.util.LinkedHashMap;
 import java.util.Random;
 
 /**
@@ -22,6 +23,8 @@ public class StatusEffect {
 
     private int numberOfTurns;
 
+    private LinkedHashMap<String, Double> statModifiers = new LinkedHashMap();
+
     /**
      * Create a new status effect
      *
@@ -29,12 +32,14 @@ public class StatusEffect {
      * @param Description The status effect's description
      * @param Element The element this status effect corresponds to
      * @param BaseDamage The base damage this status effect does (before being modified by any bonuses/resistances)
+     * @param StatModifiers A LinkedHashMap of Stat names and Junction modifier values
      */
-    public StatusEffect(String Name, String Description, String Element, double BaseDamage) {
+    public StatusEffect(String Name, String Description, String Element, double BaseDamage, LinkedHashMap StatModifiers) {
         name = labels.Magic.getLabelValue(Name).toString();
         description = labels.Magic.getLabelValue(Description).toString();
         element =  Labels.getLabelValue(Element).toString();
         baseDamage = BaseDamage;
+        statModifiers = StatModifiers;
 
         //Number of turns is random between 1 and 10
         //TODO: This should be influenced by attacking creatures MAGIC (only if applied by a magic spell) AND LUCK stats as well as defending creatures SPIRIT
@@ -49,13 +54,15 @@ public class StatusEffect {
      * @param Description The status effect's description
      * @param Element The element this status effect corresponds to
      * @param BaseDamage The base damage this status effect does (before being modified by any bonuses/resistances)
+     * @param StatModifiers A LinkedHashMap of Stat names and Junction modifier values
      * @param NumberOfTurns The number of turns/actions to apply this status effect for
      */
-    public StatusEffect(String Name, String Description, String Element, double BaseDamage, int NumberOfTurns) {
+    public StatusEffect(String Name, String Description, String Element, double BaseDamage, LinkedHashMap StatModifiers, int NumberOfTurns) {
         name = labels.Magic.getLabelValue(Name).toString();
         description = labels.Magic.getLabelValue(Description).toString();
         element =  Labels.getLabelValue(Element).toString();
         baseDamage = BaseDamage;
+        statModifiers = StatModifiers;
         numberOfTurns = NumberOfTurns;
     }
 

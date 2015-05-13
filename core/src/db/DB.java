@@ -111,4 +111,49 @@ public class DB {
             return null;
         }
     }
+
+    /**
+     * Retrieves every record in the STATUS_EFFECT table in the database.
+     *
+     * @return An ArrayList containing each table row as an ArrayList object
+     */
+    public static ArrayList<ArrayList> getStatusEffects() {
+        try {
+            Class.forName("org.h2.Driver");
+            Connection con = DriverManager.getConnection("jdbc:h2:~/db");
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM STATUS_EFFECT");
+
+            ArrayList<ArrayList> rows = new ArrayList<>();
+
+            //Creates an ArrayList containing each table row
+            while( rs.next() ) {
+                ArrayList<String> row = new ArrayList<>();
+                row.add(rs.getString("NAME"));
+                row.add(rs.getString("DESCRIPTION"));
+                row.add(rs.getString("ELEMENT"));
+                row.add(rs.getString("DAMAGE"));
+                row.add(rs.getString("NUMBER_OF_TURNS"));
+                row.add(rs.getString("MOD_AGILITY"));
+                row.add(rs.getString("MOD_DEFENCE"));
+                row.add(rs.getString("MOD_EVASION"));
+                row.add(rs.getString("MOD_HP"));
+                row.add(rs.getString("MOD_HIT"));
+                row.add(rs.getString("MOD_LUCK"));
+                row.add(rs.getString("MOD_MAGIC"));
+                row.add(rs.getString("MOD_SPIRIT"));
+                row.add(rs.getString("MOD_STRENGTH"));
+
+                //Add to master array list
+                rows.add(row);
+            }
+
+            stmt.close();
+            con.close();
+            return rows;
+        } catch( Exception e )        {
+            System.out.println("FATAL: Can't connect to database. Please verify game files.");
+            return null;
+        }
+    }
 }

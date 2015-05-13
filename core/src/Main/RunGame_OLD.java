@@ -22,6 +22,7 @@ public class RunGame_OLD {
 
         ItemList itemList = Setup.createItems();
         MagicList magicList = Setup.createMagic();
+        StatusEffectList statusEffectList = Setup.createStatusEffects();
         //TODO: Create a list of status effects here with values taken from DB similar to how Magic and Items lists are created
 
         Scanner scanner = new Scanner(System.in);

@@ -19,7 +19,7 @@ public class StatusEffectList {
         statusEffectList = new ArrayList<StatusEffect>();
     }
 
-    public ArrayList getItemList() {
+    public ArrayList getStatusEffectList() {
         return statusEffectList;
     }
 
