@@ -103,6 +103,7 @@ public class Setup {
     public static MagicList createMagic() {
 
         MagicList magicList = new MagicList();
+        StatusEffectList statusEffectList = createStatusEffects();
 
         ArrayList<ArrayList> rows = DB.getMagic();
 
@@ -126,6 +127,7 @@ public class Setup {
             String element = stringRow[13];
             double baseDamage = Double.parseDouble(stringRow[14]);
             String statusEffectName = stringRow[15];
+            StatusEffect statusEffect = statusEffectList.getStatusEffectFromListByLabel(statusEffectName);
             double statusEffectBaseChance = Double.parseDouble(stringRow[16]);
 
             //Assign Stat Values
@@ -142,7 +144,7 @@ public class Setup {
 
 
             //Create a magicItem and add it to the ArrayList
-            Magic magicItem = new Magic(name, desc, battleUse, worldUse, statModifiers, element, statusEffectName, baseDamage, statusEffectBaseChance);
+            Magic magicItem = new Magic(name, desc, battleUse, worldUse, statModifiers, element, statusEffect, baseDamage, statusEffectBaseChance);
             magicList.getMagicList().add(magicItem);
         }
         return magicList;
@@ -193,12 +195,7 @@ public class Setup {
 
 
             //Create a statusEffectItem and add it to the ArrayList
-            StatusEffect statusEffectItem;
-            if (numTurns != -1) {
-                statusEffectItem = new StatusEffect(name, desc, element, baseDamage, statModifiers, numTurns);
-            } else {
-                statusEffectItem = new StatusEffect(name, desc, element, baseDamage, statModifiers);
-            }
+            StatusEffect statusEffectItem = new StatusEffect(name, desc, element, baseDamage, statModifiers, numTurns);
 
             statusEffectList.getStatusEffectList().add(statusEffectItem);
         }

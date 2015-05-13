@@ -25,27 +25,8 @@ public class StatusEffect {
 
     private LinkedHashMap<String, Double> statModifiers = new LinkedHashMap();
 
-    /**
-     * Create a new status effect
-     *
-     * @param Name The name of the status effect
-     * @param Description The status effect's description
-     * @param Element The element this status effect corresponds to
-     * @param BaseDamage The base damage this status effect does (before being modified by any bonuses/resistances)
-     * @param StatModifiers A LinkedHashMap of Stat names and Junction modifier values
-     */
-    public StatusEffect(String Name, String Description, String Element, double BaseDamage, LinkedHashMap StatModifiers) {
-        name = labels.Magic.getLabelValue(Name).toString();
-        description = labels.Magic.getLabelValue(Description).toString();
-        element =  Labels.getLabelValue(Element).toString();
-        baseDamage = BaseDamage;
-        statModifiers = StatModifiers;
+    //TODO: Implement randomiseNumberOfTurns method that should gen a random number each time the status effect is applied should be influenced by attacking creatures MAGIC (only if applied by a magic spell) AND LUCK stats as well as defending creatures SPIRIT
 
-        //Number of turns is random between 1 and 10
-        //TODO: This should be influenced by attacking creatures MAGIC (only if applied by a magic spell) AND LUCK stats as well as defending creatures SPIRIT
-        Random rand = new Random();
-        numberOfTurns = rand.nextInt(10 - 1) + 1;
-    }
 
     /**
      * Create a new status effect
@@ -58,9 +39,13 @@ public class StatusEffect {
      * @param NumberOfTurns The number of turns/actions to apply this status effect for
      */
     public StatusEffect(String Name, String Description, String Element, double BaseDamage, LinkedHashMap StatModifiers, int NumberOfTurns) {
-        name = labels.Magic.getLabelValue(Name).toString();
-        description = labels.Magic.getLabelValue(Description).toString();
-        element =  Labels.getLabelValue(Element).toString();
+        name = labels.Status.getLabelValue(Name).toString();
+        description = labels.Status.getLabelValue(Description).toString();
+        if (element != null) {
+            element = Labels.getLabelValue(Element).toString();
+        } else {
+            element = Labels.elementNone;
+        }
         baseDamage = BaseDamage;
         statModifiers = StatModifiers;
         numberOfTurns = NumberOfTurns;

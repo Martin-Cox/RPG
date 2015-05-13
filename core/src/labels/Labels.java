@@ -27,6 +27,7 @@ public class Labels {
     public static final String elementHealing = "Healing";
     public static final String elementFire = "Fire";
     public static final String elementWind = "Wind";
+    public static final String elementNone = "None";
 
 
     //Misc labels

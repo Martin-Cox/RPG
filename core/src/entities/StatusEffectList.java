@@ -29,15 +29,15 @@ public class StatusEffectList {
      * NOT labels.Status.statusNameHealing
      *
      * @param label the label (as found in labels.Items)
-     * @return If the status exists then the item is returned, otherwise null
+     * @return If the status exists then the status is returned, otherwise null
      */
-    public Item getStatusEffectFromListByLabel(String label) {
+    public StatusEffect getStatusEffectFromListByLabel(String label) {
         String statusEffectName = Status.getLabelValue(label).toString();
 
         for (int i = 0; i < statusEffectList.size(); i++) {
-            Item currItem = (Item) statusEffectList.get(i);
-            if (currItem.getName().equalsIgnoreCase(statusEffectName)) {
-                return currItem;
+            StatusEffect currStatusEffect = (StatusEffect) statusEffectList.get(i);
+            if (currStatusEffect.getName().equalsIgnoreCase(statusEffectName)) {
+                return currStatusEffect;
             }
         }
 
@@ -49,13 +49,13 @@ public class StatusEffectList {
      * or in labels version e.g. labels.Status.statusNameBurning
      *
      * @param statusEffectName the name of the item
-     * @return If the item exists then the item is returned, otherwise null
+     * @return If the status exists then the status is returned, otherwise null
      */
-    public Item getStatusEffectmFromListByItemName(String statusEffectName) {
+    public StatusEffect getStatusEffectmFromListByStatusEffectName(String statusEffectName) {
         for (int i = 0; i < statusEffectList.size(); i++) {
-            Item currItem = (Item) statusEffectList.get(i);
-            if (currItem.getName().equalsIgnoreCase(statusEffectName)) {
-                return currItem;
+            StatusEffect currStatusEffect = (StatusEffect) statusEffectList.get(i);
+            if (currStatusEffect.getName().equalsIgnoreCase(statusEffectName)) {
+                return currStatusEffect;
             }
         }
 
