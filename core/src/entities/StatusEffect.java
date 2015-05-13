@@ -41,10 +41,10 @@ public class StatusEffect {
     public StatusEffect(String Name, String Description, String Element, double BaseDamage, LinkedHashMap StatModifiers, int NumberOfTurns) {
         name = labels.Status.getLabelValue(Name).toString();
         description = labels.Status.getLabelValue(Description).toString();
-        if (element != null) {
-            element = Labels.getLabelValue(Element).toString();
-        } else {
+        if (Element.equalsIgnoreCase("")) {
             element = Labels.elementNone;
+        } else {
+            element = Labels.getLabelValue(Element).toString();
         }
         baseDamage = BaseDamage;
         statModifiers = StatModifiers;

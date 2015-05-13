@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3c02fbe-69e1-478a-ac41-3f0967f86e5f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/labels/Labels.java" afterPath="$PROJECT_DIR$/core/src/labels/Labels.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/entities/Magic.java" afterPath="$PROJECT_DIR$/core/src/entities/Magic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/Main/RunGame_OLD.java" afterPath="$PROJECT_DIR$/core/src/Main/RunGame_OLD.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/Main/Setup.java" afterPath="$PROJECT_DIR$/core/src/Main/Setup.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/entities/StatusEffect.java" afterPath="$PROJECT_DIR$/core/src/entities/StatusEffect.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/entities/StatusEffectList.java" afterPath="$PROJECT_DIR$/core/src/entities/StatusEffectList.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RPG.iws" />
@@ -42,10 +37,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Setup.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Setup.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/Main/Setup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33269963">
+            <state vertical-scroll-proportion="0.0">
               <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
               <folding />
             </state>
@@ -96,7 +91,7 @@
         <entry file="file://$PROJECT_DIR$/core/src/entities/StatusEffect.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,11 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RunGame_OLD.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RunGame_OLD.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/Main/RunGame_OLD.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.39163497">
+              <caret line="116" column="30" selection-start-line="116" selection-start-column="30" selection-end-line="116" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -792,9 +787,9 @@
         <option value="$PROJECT_DIR$/core/src/Main/RunGame_OLD.java" />
         <option value="$PROJECT_DIR$/core/src/entities/Magic.java" />
         <option value="$PROJECT_DIR$/core/src/entities/StatusEffectList.java" />
-        <option value="$PROJECT_DIR$/core/src/entities/StatusEffect.java" />
         <option value="$PROJECT_DIR$/core/src/Main/Setup.java" />
         <option value="$PROJECT_DIR$/core/src/labels/Labels.java" />
+        <option value="$PROJECT_DIR$/core/src/entities/StatusEffect.java" />
       </list>
     </option>
   </component>
@@ -1376,7 +1371,13 @@
       <option name="project" value="LOCAL" />
       <updated>1431535701019</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Magic now has Status Effect property reading from statusEffectList">
+      <created>1431536951811</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1431536951811</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1449,7 +1450,8 @@
     <MESSAGE value="Added STATUS_EFFECT table to DB with sample data" />
     <MESSAGE value="Added StatusEffect list. Changed Character object to supprot Status Effect objects" />
     <MESSAGE value="Get Status Effects from DB and create statusEffectList master list." />
-    <option name="LAST_COMMIT_MESSAGE" value="Get Status Effects from DB and create statusEffectList master list." />
+    <MESSAGE value="Magic now has Status Effect property reading from statusEffectList" />
+    <option name="LAST_COMMIT_MESSAGE" value="Magic now has Status Effect property reading from statusEffectList" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1461,7 +1463,7 @@
           <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="43" />
+      <option name="time" value="44" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1815,28 +1817,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/entities/StatusEffect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/labels/Labels.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/Main/RunGame_OLD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1851,8 +1835,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/Main/Setup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33269963">
+        <state vertical-scroll-proportion="0.0">
           <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/entities/StatusEffect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/Main/RunGame_OLD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39163497">
+          <caret line="116" column="30" selection-start-line="116" selection-start-column="30" selection-end-line="116" selection-end-column="30" />
           <folding />
         </state>
       </provider>
