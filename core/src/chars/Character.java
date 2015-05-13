@@ -2,6 +2,7 @@ package chars;
 
 import entities.Item;
 import entities.Magic;
+import entities.StatusEffect;
 import entities.Weapon;
 import labels.Labels;
 
@@ -19,7 +20,7 @@ public class Character {
     LinkedHashMap<Magic, Integer> magic = new LinkedHashMap();
     Weapon equippedWeapon_L;
     Weapon equippedWeapon_R;
-    ArrayList<String> statusEffects;
+    ArrayList<StatusEffect> statusEffects;
 
     /**
      * Creates a new instance of a character
@@ -239,19 +240,19 @@ public class Character {
      *
      * @return ArrayList of status effects as Strings
      */
-    public ArrayList<String> getStatusEffects() { return this.statusEffects; }
+    public ArrayList<StatusEffect> getStatusEffects() { return this.statusEffects; }
 
     /**
      * Sets the characters status effects
      *
      * @param StatusEffects ArrayList of status effects as Strings
      */
-    public void setStatusEffects(ArrayList<String> StatusEffects) { this.statusEffects = StatusEffects; }
+    public void setStatusEffects(ArrayList<StatusEffect> StatusEffects) { this.statusEffects = StatusEffects; }
 
     /**
      * Removes all status effects
      */
-    public void removeStatusEffects() { this.statusEffects = new ArrayList<String>(); }
+    public void removeStatusEffects() { this.statusEffects = new ArrayList<StatusEffect>(); }
 
     /**
      * Removes a status effect
@@ -269,7 +270,7 @@ public class Character {
      *
      * @param StatusEffect A status effect to give to this character
      */
-    public void addStatusEffect(String StatusEffect) {
+    public void addStatusEffect(StatusEffect StatusEffect) {
         if (!this.statusEffects.contains(StatusEffect)) {
             this.statusEffects.add(StatusEffect);
         }
