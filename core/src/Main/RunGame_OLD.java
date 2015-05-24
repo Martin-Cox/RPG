@@ -1,4 +1,4 @@
-package Main;
+package main;
 
 import chars.NPC;
 import chars.Player;
@@ -6,7 +6,6 @@ import entities.*;
 import labels.Items;
 import labels.Labels;
 
-import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 

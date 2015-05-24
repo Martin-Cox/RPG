@@ -1,4 +1,4 @@
-package Main;
+package main;
 
 import db.DB;
 import entities.*;
@@ -6,7 +6,6 @@ import labels.Items;
 import labels.Labels;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedHashMap;
 
 /**

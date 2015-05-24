@@ -1,10 +1,10 @@
-package Main.android;
+package main.android;
 
 import android.os.Bundle;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
-import Main.GdxWindow;
+import main.GdxWindow;
 
 public class AndroidLauncher extends AndroidApplication {
 	@Override
