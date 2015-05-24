@@ -2,6 +2,8 @@ package chars;
 
 import labels.Labels;
 
+import java.util.LinkedHashMap;
+
 /**
  * The player character instance. It is only initialised once.
  *
@@ -19,16 +21,22 @@ public class Player extends Character{
 
         super(Name, null, null, null);
 
+        LinkedHashMap stats = new LinkedHashMap();
+
         //Players starting stats
-        super.stats.put(Labels.HP, 400);
-        super.stats.put(Labels.level, 1);
-        super.stats.put(Labels.agility, 100);
-        super.stats.put(Labels.defence, 90);
-        super.stats.put(Labels.evasion, 35);
-        super.stats.put(Labels.hitRate, 255);
-        super.stats.put(Labels.luck, 60);
-        super.stats.put(Labels.magic, 90);
-        super.stats.put(Labels.spirit, 50);
-        super.stats.put(Labels.strength, 110);
+        stats.put(Labels.HP, 400);
+        stats.put(Labels.level, 1);
+        stats.put(Labels.agility, 100);
+        stats.put(Labels.defence, 90);
+        stats.put(Labels.evasion, 35);
+        stats.put(Labels.hitRate, 255);
+        stats.put(Labels.luck, 60);
+        stats.put(Labels.magic, 90);
+        stats.put(Labels.spirit, 50);
+        stats.put(Labels.strength, 110);
+
+        super.baseStats = stats;
+        super.modStats = stats;
+
     }
 }

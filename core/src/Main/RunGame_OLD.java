@@ -35,7 +35,7 @@ public class RunGame_OLD {
 
         System.out.println("Your stats are: ");
 
-        for (Map.Entry<String, Integer> entry :  player.getStats().entrySet()) {
+        for (Map.Entry<String, Integer> entry :  player.getBaseStats().entrySet()) {
             String key = entry.getKey();
             Integer value = entry.getValue();
             System.out.println("Stat Name: \"" + key + "\" Value: " + value);

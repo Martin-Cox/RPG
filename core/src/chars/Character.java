@@ -216,32 +216,56 @@ public class Character {
      */
     public void equipWeapon(String HandToEquip, Weapon Weapon) {
         //TODO: Need to check if item is in the characters inventory first
-        //TODO: If character already has an equipped weapon in that hand, then need to get that weapon Object and add 1 to the characters inventory
         if (HandToEquip.equalsIgnoreCase(Labels.leftHand)) {
             //Equip weapon in left hand
 
-            //Remove currently equipped weapon (if any) and place it back into the inventory
-            //Weapon equippedItemToReplace = this.equippedWeapon_L;
-            //if (equippedItemToReplace != null) { this.updateInventory(equippedItemToReplace, 1);
+            Weapon returnWeapon_L = null;
+            Weapon returnWeapon_R = null;
 
-            //Remove weapon to equip from inventory and equip item
-            //this.updateInventory(Weapon, -1);
+            if (this.equippedWeapon_L != null) {
+                returnWeapon_L = this.equippedWeapon_L;
+            }
+
             this.equippedWeapon_L = Weapon;
             if (Weapon.getDualHanded()) {
+                if (this.equippedWeapon_R != null) {
+                    returnWeapon_R = this.equippedWeapon_R;
+                }
                 this.equippedWeapon_R = Weapon;
             }
+
+            if (returnWeapon_L != null) {
+                updateInventory(returnWeapon_L, 1);
+            }
+
+            if (returnWeapon_R != null) {
+                updateInventory(returnWeapon_R, 1);
+            }
+
         } else if (HandToEquip.equalsIgnoreCase(Labels.rightHand)) {
             //Equip weapon in right hand
 
-            //Remove currently equipped weapon (if any) and place it back into the inventory
-            //Weapon equippedItemToReplace = this.equippedWeapon_R;
-            //if (equippedItemToReplace != null) { this.updateInventory(equippedItemToReplace, 1);
+            Weapon returnWeapon_L = null;
+            Weapon returnWeapon_R = null;
 
-            //Remove weapon to equip from inventory and equip item
-            //this.updateInventory(Weapon, -1);
+            if (this.equippedWeapon_R != null) {
+                returnWeapon_R = this.equippedWeapon_R;
+            }
+
             this.equippedWeapon_R = Weapon;
             if (Weapon.getDualHanded()) {
+                if (this.equippedWeapon_L != null) {
+                    returnWeapon_L = this.equippedWeapon_L;
+                }
                 this.equippedWeapon_L = Weapon;
+            }
+
+            if (returnWeapon_L != null) {
+                updateInventory(returnWeapon_L, 1);
+            }
+
+            if (returnWeapon_R != null) {
+                updateInventory(returnWeapon_R, 1);
             }
         }
     }
