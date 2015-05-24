@@ -26,11 +26,11 @@ public class DB {
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM MAGIC");
 
-            ArrayList<ArrayList> rows = new ArrayList<>();
+            ArrayList<ArrayList> rows = new ArrayList();
 
             //Creates an ArrayList containing each table row
             while( rs.next() ) {
-                ArrayList<String> row = new ArrayList<>();
+                ArrayList<String> row = new ArrayList();
                 row.add(rs.getString("NAME"));
                 row.add(rs.getString("DESCRIPTION"));
                 row.add(rs.getString("BATTLE_USE"));
@@ -74,11 +74,11 @@ public class DB {
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM ITEM");
 
-            ArrayList<ArrayList> rows = new ArrayList<>();
+            ArrayList<ArrayList> rows = new ArrayList();
 
             //Creates an ArrayList containing each table row
             while( rs.next() ) {
-                ArrayList<String> row = new ArrayList<>();
+                ArrayList<String> row = new ArrayList();
                 row.add(rs.getString("NAME"));
                 row.add(rs.getString("TYPE"));
                 row.add(rs.getString("DESCRIPTION"));
@@ -124,11 +124,11 @@ public class DB {
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM STATUS_EFFECT");
 
-            ArrayList<ArrayList> rows = new ArrayList<>();
+            ArrayList<ArrayList> rows = new ArrayList();
 
             //Creates an ArrayList containing each table row
             while( rs.next() ) {
-                ArrayList<String> row = new ArrayList<>();
+                ArrayList<String> row = new ArrayList();
                 row.add(rs.getString("NAME"));
                 row.add(rs.getString("DESCRIPTION"));
                 row.add(rs.getString("ELEMENT"));
