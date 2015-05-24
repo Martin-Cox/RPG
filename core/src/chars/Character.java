@@ -15,7 +15,8 @@ import java.util.LinkedHashMap;
 public class Character {
 
     String name;
-    LinkedHashMap<String, Integer> stats = new LinkedHashMap();
+    LinkedHashMap<String, Integer> baseStats = new LinkedHashMap();
+    LinkedHashMap<String, Integer> modStats = new LinkedHashMap();
     LinkedHashMap<Item, Integer> inventory = new LinkedHashMap();
     LinkedHashMap<Magic, Integer> magic = new LinkedHashMap();
     Weapon equippedWeapon_L;
@@ -23,7 +24,7 @@ public class Character {
     ArrayList<StatusEffect> statusEffects;
 
     /**
-     * Creates a new instance of a character
+     * Creates a new instance of a character with no affinities
      *
      * @param Name The full name of the character
      * @param Stats LinkedHashMap of Stat names and value pairs
@@ -35,13 +36,14 @@ public class Character {
         if (Stats == null) { Stats = new LinkedHashMap(); }
         if (Inventory == null) { Inventory = new LinkedHashMap(); }
         if (Magic == null) { Magic = new LinkedHashMap(); }
-        this.stats = Stats;
+        this.baseStats = Stats;
+        this.modStats = this.baseStats;
         this.inventory = Inventory;
         this.magic = Magic;
     }
 
     /**
-     * Creates a new instance of a character
+     * Creates a new instance of a character with no affinities
      *
      * @param Name The full name of the character
      * @param Stats LinkedHashMap of Stat names and value pairs
@@ -55,7 +57,8 @@ public class Character {
         if (Stats == null) { Stats = new LinkedHashMap(); }
         if (Inventory == null) { Inventory = new LinkedHashMap(); }
         if (Magic == null) { Magic = new LinkedHashMap(); }
-        this.stats = Stats;
+        this.baseStats = Stats;
+        this.modStats = this.baseStats;
         this.inventory = Inventory;
         this.magic = Magic;
         this.equippedWeapon_L = EquippedWeapon_L;
@@ -70,11 +73,19 @@ public class Character {
     public String getName() { return this.name; }
 
     /**
-     * Gets stats
+     * Gets characters base stats
      *
      * @return LinkedHashMap of stats
      */
-    public LinkedHashMap<String, Integer> getStats() { return this.stats; }
+    public LinkedHashMap<String, Integer> getBaseStats() { return this.baseStats; }
+
+    /**
+     * Gets characters modified stats for use in battle
+     *
+     * @return LinkedHashMap of stats
+     */
+    public LinkedHashMap<String, Integer> getModStatsStats() { return this.modStats; }
+
 
     /**
      * Gets the inventory
