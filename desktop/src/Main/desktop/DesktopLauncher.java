@@ -1,6 +1,5 @@
 package Main.desktop;
 
-import Main.RunGame_DialogTest;
 import Main.RunGame_OLD;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
