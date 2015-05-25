@@ -11,6 +11,11 @@ public class AndroidLauncher extends AndroidApplication {
 	protected void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
+
+		//Don't need these, so we can turn them off and save battery
+		config.useAccelerometer = false;
+		config.useCompass = false;
+
 		initialize(new GdxWindow(), config);
 	}
 }
