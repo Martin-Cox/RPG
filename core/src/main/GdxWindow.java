@@ -18,11 +18,11 @@ public class GdxWindow extends ApplicationAdapter {
 
 	public void create() {
 		camera = new OrthographicCamera();
-		camera.setToOrtho(false, 800, 480);
+		camera.setToOrtho(false, 1920, 1080);
 
 		batch = new SpriteBatch();
-		font = new BitmapFont(Gdx.files.internal("coval.fnt"));
-		font2 = new BitmapFont(Gdx.files.internal("coval.fnt"));
+		font = new BitmapFont(Gdx.files.internal("news.fnt"));
+		font2 = new BitmapFont(Gdx.files.internal("news.fnt"));
 	}
 
 	public void render() {
@@ -36,11 +36,23 @@ public class GdxWindow extends ApplicationAdapter {
 
 
 		if(Gdx.input.isTouched() || Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
+			double xPos = Gdx.input.getX();
+			double yPos = Gdx.input.getY();
 			batch.begin();
-			font.dispose();
-			font2.draw(batch, "You are pressing left mouse/touching the screen", 100, 400);
+			//font.dispose();
+			String message = "You are pressing left mouse/touching the screen at X:" + xPos + " Y:" + yPos;
+			font.draw(batch, message, 100, 800);
+			batch.end();
+		} else {
+			batch.begin();
+			font.draw(batch, "Click the left mouse button/Touch the screen", 100, 800);
 			batch.end();
 		}
+
+		if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
+			Gdx.app.exit();
+		}
+
 	}
 
 }
