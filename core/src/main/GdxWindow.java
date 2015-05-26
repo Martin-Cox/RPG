@@ -1,5 +1,6 @@
 package main;
 
+import chars.Player;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
@@ -8,12 +9,17 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import labels.Dialogs;
 
-public class GdxWindow extends ApplicationAdapter {
+import java.util.Map;
+
+public class GdxWindow extends ApplicationAdapter implements Input.TextInputListener {
 	private BitmapFont font;
 
 	private OrthographicCamera camera;
 	private SpriteBatch batch;
+	boolean firstTouch = true;
+	Player player = null;
 
 	public void create() {
 		camera = new OrthographicCamera();
@@ -24,7 +30,7 @@ public class GdxWindow extends ApplicationAdapter {
 	}
 
 	public void render() {
-		Gdx.gl.glClearColor(0, 0, 0.2f, 1);
+		Gdx.gl.glClearColor(0, 0, 0.25f, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
 		batch.begin();
@@ -32,8 +38,11 @@ public class GdxWindow extends ApplicationAdapter {
 		font.draw(batch, "Hello World! Test custom font :)", 100, 400);
 		batch.end();
 
-
 		if(Gdx.input.isTouched() || Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
+			if (firstTouch == true) {
+				Gdx.input.getTextInput(this, Dialogs.playerCharacterNameTitle, Dialogs.playerCharacterNameInitialValue, "");
+				firstTouch = false;
+			}
 			double xPos = Gdx.input.getX();
 			double yPos = Gdx.input.getY();
 			batch.begin();
@@ -47,10 +56,32 @@ public class GdxWindow extends ApplicationAdapter {
 			batch.end();
 		}
 
+		//Draw player character details (if it exists)
+		if (player != null) {
+			batch.begin();
+			font.draw(batch, "Player name: " + player.getName(), 1200, 800);
+			batch.end();
+			int heightPosition = 200;
+			for (Map.Entry<String, Integer> entry :  player.getBaseStats().entrySet()) {
+				String key = entry.getKey();
+				Integer value = entry.getValue();
+				batch.begin();
+				font.draw(batch, "Stat " + entry.getKey() + ": " + entry.getValue(), 1200, heightPosition);
+				batch.end();
+				heightPosition += 35;
+			}
+		}
+
 		if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
 			Gdx.app.exit();
 		}
+	}
 
+	public void input(String name) {
+		this.player = SimpleCreateCharacter.runGame(name);
+	}
+
+	public void canceled() {
 	}
 
 }
