@@ -11,7 +11,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class GdxWindow extends ApplicationAdapter {
 	private BitmapFont font;
-	private BitmapFont font2;
 
 	private OrthographicCamera camera;
 	private SpriteBatch batch;
@@ -22,7 +21,6 @@ public class GdxWindow extends ApplicationAdapter {
 
 		batch = new SpriteBatch();
 		font = new BitmapFont(Gdx.files.internal("news.fnt"));
-		font2 = new BitmapFont(Gdx.files.internal("news.fnt"));
 	}
 
 	public void render() {
