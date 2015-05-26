@@ -15,6 +15,7 @@ public class AndroidLauncher extends AndroidApplication {
 		//Don't need these, so we can turn them off and save battery
 		config.useAccelerometer = false;
 		config.useCompass = false;
+		config.useImmersiveMode= true;
 
 		initialize(new GdxWindow(), config);
 	}
