@@ -27,6 +27,10 @@ public class GdxWindow extends ApplicationAdapter implements Input.TextInputList
 
 		batch = new SpriteBatch();
 		font = new BitmapFont(Gdx.files.internal("news.fnt"));
+
+		//TODO: May not be needed depending on final game structure
+		Gdx.graphics.setContinuousRendering(false);
+		Gdx.graphics.requestRendering();
 	}
 
 	public void render() {
