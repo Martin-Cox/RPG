@@ -13,7 +13,7 @@ import labels.Dialogs;
 
 import java.util.Map;
 
-public class GdxWindow extends ApplicationAdapter implements Input.TextInputListener {
+public class RPGWindow extends ApplicationAdapter implements Input.TextInputListener {
 	private BitmapFont font;
 
 	private OrthographicCamera camera;

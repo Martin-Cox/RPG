@@ -3,7 +3,7 @@ package main.desktop;
 		import main.RunGame_OLD;
 		import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 		import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
-		import main.GdxWindow;
+		import main.RPGWindow;
 
 public class DesktopLauncher {
 	public static void main (String[] arg) {
@@ -13,7 +13,7 @@ public class DesktopLauncher {
 		config.height = 1080;
 		config.fullscreen = true;
 		config.resizable = false;
-		new LwjglApplication(new GdxWindow(), config);
+		new LwjglApplication(new RPGWindow(), config);
 
 		RunGame_OLD runGame = new RunGame_OLD();
 		runGame.runGame();

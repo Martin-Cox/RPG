@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
-import main.GdxWindow;
+import main.RPGWindow;
 
 public class AndroidLauncher extends AndroidApplication {
 	@Override
@@ -17,6 +17,6 @@ public class AndroidLauncher extends AndroidApplication {
 		config.useCompass = false;
 		config.useImmersiveMode= true;
 
-		initialize(new GdxWindow(), config);
+		initialize(new RPGWindow(), config);
 	}
 }
