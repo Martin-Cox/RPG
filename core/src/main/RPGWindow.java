@@ -7,8 +7,10 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Rectangle;
 import labels.Dialogs;
 
 import java.util.Map;
@@ -22,6 +24,9 @@ public class RPGWindow extends ApplicationAdapter implements Input.TextInputList
 	Player player = null;
 	int frameRenderCount = 0;
 
+	private Texture charImage;
+	private Rectangle charIcon;
+
 	public void create() {
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, 1920, 1080);
@@ -29,19 +34,29 @@ public class RPGWindow extends ApplicationAdapter implements Input.TextInputList
 		batch = new SpriteBatch();
 		font = new BitmapFont(Gdx.files.internal("news.fnt"));
 
+		charImage = new Texture(Gdx.files.internal("Character.png"));
+
+		charIcon = new Rectangle();
+		charIcon.x = 600;
+		charIcon.y = 100;
+		charIcon.width = 225;
+		charIcon.height = 225;
+
 		//TODO: May not be needed depending on final game structure
 		Gdx.graphics.setContinuousRendering(false);
 		Gdx.graphics.requestRendering();
 	}
 
 	public void render() {
-		Gdx.gl.glClearColor(0, 0, 0.25f, 1);
+		Gdx.gl.glClearColor(0, 0, 0f, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+		camera.update(); //Should do this once per frame
 
 		frameRenderCount++;
 
 		batch.begin();
-		batch.setColor(Color.BLUE);
+		batch.draw(charImage, charIcon.x, charIcon.y);
 		font.draw(batch, "Hello World! Test custom font :)", 100, 400);
 		font.draw(batch, "Frame render count: " + frameRenderCount, 10, 1070);
 		batch.end();
@@ -54,7 +69,6 @@ public class RPGWindow extends ApplicationAdapter implements Input.TextInputList
 			double xPos = Gdx.input.getX();
 			double yPos = Gdx.input.getY();
 			batch.begin();
-			//font.dispose();
 			String message = "You are pressing left mouse/touching the screen at X:" + xPos + " Y:" + yPos;
 			font.draw(batch, message, 100, 800);
 			batch.end();
