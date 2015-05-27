@@ -20,6 +20,7 @@ public class GdxWindow extends ApplicationAdapter implements Input.TextInputList
 	private SpriteBatch batch;
 	boolean firstTouch = true;
 	Player player = null;
+	int frameRenderCount = 0;
 
 	public void create() {
 		camera = new OrthographicCamera();
@@ -37,9 +38,12 @@ public class GdxWindow extends ApplicationAdapter implements Input.TextInputList
 		Gdx.gl.glClearColor(0, 0, 0.25f, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
+		frameRenderCount++;
+
 		batch.begin();
 		batch.setColor(Color.BLUE);
 		font.draw(batch, "Hello World! Test custom font :)", 100, 400);
+		font.draw(batch, "Frame render count: " + frameRenderCount, 10, 1070);
 		batch.end();
 
 		if(Gdx.input.isTouched() || Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
