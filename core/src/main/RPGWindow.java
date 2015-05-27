@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector3;
 import labels.Dialogs;
 
 import java.util.Map;
@@ -20,7 +21,6 @@ public class RPGWindow extends ApplicationAdapter implements Input.TextInputList
 
 	private OrthographicCamera camera;
 	private SpriteBatch batch;
-	boolean firstTouch = true;
 	Player player = null;
 	int frameRenderCount = 0;
 
@@ -59,13 +59,12 @@ public class RPGWindow extends ApplicationAdapter implements Input.TextInputList
 		batch.draw(charImage, charIcon.x, charIcon.y);
 		font.draw(batch, "Hello World! Test custom font :)", 100, 400);
 		font.draw(batch, "Frame render count: " + frameRenderCount, 10, 1070);
+		font.draw(batch, "Char icon x: " + charIcon.getX(), 10, 1040);
+		font.draw(batch, "Char icon y: " + charIcon.getY(), 10, 1010);
+		font.draw(batch, "CLICK/TOUCH CHARACTER ICON TO START!", 10, 970);
 		batch.end();
 
 		if(Gdx.input.isTouched() || Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
-			if (firstTouch == true) {
-				Gdx.input.getTextInput(this, Dialogs.playerCharacterNameTitle, Dialogs.playerCharacterNameInitialValue, "");
-				firstTouch = false;
-			}
 			double xPos = Gdx.input.getX();
 			double yPos = Gdx.input.getY();
 			batch.begin();
@@ -94,6 +93,25 @@ public class RPGWindow extends ApplicationAdapter implements Input.TextInputList
 			}
 		}
 
+		//Click and drag character sprite
+		if(Gdx.input.isTouched()) {
+			Vector3 touchPos = new Vector3();	//TODO: Really shouldn't do this, every time the frame re-renders we create a new object, meaning garbage collector has to kick in frequently
+			touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
+			camera.unproject(touchPos);
+			if (touchPos.x > charIcon.getX() && touchPos.x < charIcon.getX() + charIcon.getWidth()) {
+				if (touchPos.y > charIcon.getY() && touchPos.y < charIcon.getY() + charIcon.getHeight()) {
+					//clicked on sprite
+					if (player == null) {
+						Gdx.input.getTextInput(this, Dialogs.playerCharacterNameTitle, Dialogs.playerCharacterNameInitialValue, "");
+					}
+					charIcon.x = touchPos.x - 225 / 2;
+					charIcon.y = touchPos.y - 225 / 2;
+				}
+			}
+
+		}
+
+		//Close program by pressing Esc key
 		if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
 			Gdx.app.exit();
 		}
