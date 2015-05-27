@@ -26,6 +26,7 @@ public class RPGWindow extends ApplicationAdapter implements Input.TextInputList
 
 	private Texture charImage;
 	private Rectangle charIcon;
+	private boolean touchSprite = false;
 
 	public void create() {
 		camera = new OrthographicCamera();
@@ -100,17 +101,22 @@ public class RPGWindow extends ApplicationAdapter implements Input.TextInputList
 			camera.unproject(touchPos);
 			if (touchPos.x > charIcon.getX() && touchPos.x < charIcon.getX() + charIcon.getWidth()) {
 				if (touchPos.y > charIcon.getY() && touchPos.y < charIcon.getY() + charIcon.getHeight()) {
-					//clicked on sprite
-					if (player == null) {
-						Gdx.input.getTextInput(this, Dialogs.playerCharacterNameTitle, Dialogs.playerCharacterNameInitialValue, "");
-					}
-					charIcon.x = touchPos.x - 225 / 2;
-					charIcon.y = touchPos.y - 225 / 2;
+					touchSprite = true;
 				}
 			}
-
+			if (touchSprite == true) {
+				//clicked on sprite
+				if (player == null) {
+					Gdx.input.getTextInput(this, Dialogs.playerCharacterNameTitle, Dialogs.playerCharacterNameInitialValue, "");
+				}
+				charIcon.x = touchPos.x - 225 / 2;
+				charIcon.y = touchPos.y - 225 / 2;
+			}
+		} else {
+			if (touchSprite == true) {
+				touchSprite = false;
+			}
 		}
-
 		//Close program by pressing Esc key
 		if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
 			Gdx.app.exit();
