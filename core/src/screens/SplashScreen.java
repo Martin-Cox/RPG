@@ -3,11 +3,13 @@ package screens;
 /**
  * Created by Martin on 05/06/2015.
  */
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 
 public class SplashScreen implements Screen {
@@ -36,10 +38,18 @@ public class SplashScreen implements Screen {
 
         stage.addActor(splashImage);
 
+        splashImage.addAction(Actions.sequence(Actions.alpha(0), Actions.fadeIn(0.5f), Actions.delay(2), Actions.fadeOut(0.5f), Actions.run(new Runnable() {
+            @Override
+            public void run() {
+                ((Game) Gdx.app.getApplicationListener()).setScreen(new MainMenu());
+            }
+        })));
+
     }
 
     @Override
     public void hide() {
+        dispose();
     }
 
     @Override
@@ -52,5 +62,7 @@ public class SplashScreen implements Screen {
 
     @Override
     public void dispose() {
+        texture.dispose();
+        stage.dispose();
     }
 }
