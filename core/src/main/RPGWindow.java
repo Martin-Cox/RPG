@@ -4,7 +4,6 @@ import chars.Player;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -17,6 +16,7 @@ import labels.Dialogs;
 import java.util.Map;
 
 public class RPGWindow extends ApplicationAdapter implements Input.TextInputListener {
+
 	private BitmapFont font;
 
 	private OrthographicCamera camera;
