@@ -1,25 +1,22 @@
 package main;
 
-import chars.Player;
-import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
-import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Rectangle;
-import com.badlogic.gdx.math.Vector3;
-import labels.Dialogs;
+import com.badlogic.gdx.Game;
+import screens.SplashScreen;
 
-import java.util.Map;
 
-public class RPGWindow extends ApplicationAdapter implements Input.TextInputListener {
+public class RPGWindow extends Game {
 
-	private BitmapFont font;
+	@Override
+	public void create() {
+		setScreen(new SplashScreen());
+	}
+}
 
-	private OrthographicCamera camera;
+
+	//LEGACY - WILL FORM DEBUG SCREEN AFTER CLICK "NEW GAME" ON  MAIN MENU
+	/*private BitmapFont font;
+
+
 	private SpriteBatch batch;
 	Player player = null;
 	int frameRenderCount = 0;
@@ -29,8 +26,7 @@ public class RPGWindow extends ApplicationAdapter implements Input.TextInputList
 	private boolean touchSprite = false;
 
 	public void create() {
-		camera = new OrthographicCamera();
-		camera.setToOrtho(false, 1920, 1080);
+
 
 		batch = new SpriteBatch();
 		font = new BitmapFont(Gdx.files.internal("news.fnt"));
@@ -128,6 +124,4 @@ public class RPGWindow extends ApplicationAdapter implements Input.TextInputList
 	}
 
 	public void canceled() {
-	}
-
-}
+	}*/
