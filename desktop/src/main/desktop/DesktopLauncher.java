@@ -17,6 +17,6 @@ public class DesktopLauncher {
 		new LwjglApplication(new RPGWindow(), config);
 
 		RunGame_OLD runGame = new RunGame_OLD();
-		runGame.runGame();
+		//runGame.runGame();
 	}
 }

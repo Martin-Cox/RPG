@@ -12,6 +12,7 @@ import java.lang.reflect.Field;
 public class Dialogs {
 
     //Main Menu
+    public static final String mainMenuTitle = "Martin's RPG";
     public static final String mainMenuNewGame = "New Game";
     public static final String mainMenuLoadGame = "Load Game";
     public static final String mainMenuExit = "Exit";
