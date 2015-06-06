@@ -5,9 +5,12 @@
 		"news_white": { "file": "fonts/news_white.fnt" },
     },
 	
-	    "com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle": {
+	"com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle": {
         "title": { "font": title_font },
-		"menu_button_inactive": { "font": news_black, "background": blue_button_inactive},
-		"menu_button_active": { "font": news_black, "background": blue_button_active},
+		"other": { "font": news_white},
     },
+	
+	"com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle": { 
+        "menu_button": { "up": "blue_button_inactive" , "down": "blue_button_active", "font": news_black }
+    }
  }
