@@ -11,12 +11,14 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
 
 public class SplashScreen implements Screen {
 
     private Texture texture = new Texture(Gdx.files.internal("Splash_Test_Image.png"));
     private Image splashImage = new Image(texture);
     private Stage stage = new Stage();
+    private Table tableLayout = new Table();
 
     @Override
     public void render(float delta) {
@@ -33,10 +35,11 @@ public class SplashScreen implements Screen {
     @Override
     public void show() {
 
-        splashImage.setX(800);
-        splashImage.setY(400);
+        //tableLayout.setDebug(true);
+        tableLayout.setFillParent(true);
+        stage.addActor(tableLayout);
 
-        stage.addActor(splashImage);
+        tableLayout.add(splashImage);
 
         splashImage.addAction(Actions.sequence(Actions.alpha(0), Actions.fadeIn(0.5f), Actions.delay(2), Actions.fadeOut(0.5f), Actions.run(new Runnable() {
             @Override
