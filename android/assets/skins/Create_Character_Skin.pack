@@ -1,0 +1,29 @@
+
+Create_Character_Skin.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+blue_button_inactive
+  rotate: false
+  xy: 1, 1
+  size: 49, 49
+  split: 6, 6, 4, 9
+  orig: 49, 49
+  offset: 0, 0
+  index: -1
+text_input_box
+  rotate: false
+  xy: 52, 1
+  size: 49, 49
+  split: 7, 7, 6, 10
+  orig: 49, 49
+  offset: 0, 0
+  index: -1
+blue_button_active
+  rotate: false
+  xy: 103, 5
+  size: 49, 45
+  split: 6, 6, 4, 5
+  orig: 49, 45
+  offset: 0, 0
+  index: -1

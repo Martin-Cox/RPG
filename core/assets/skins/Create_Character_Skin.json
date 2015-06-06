@@ -1,0 +1,18 @@
+{
+    "com.badlogic.gdx.graphics.g2d.BitmapFont": {
+		"news_black": { "file": "fonts/news_black.fnt" },
+		"news_white": { "file": "fonts/news_white.fnt" },
+    },
+	
+	"com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle": {
+		"Default": { "font": news_white},
+    },
+	
+	"com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle": { 
+        "default": { "up": "blue_button_inactive" , "down": "blue_button_active", "font": news_black }
+    }
+	
+	"com.badlogic.gdx.scenes.scene2d.ui.TextInput$TextInputStyle": { 
+        "default": { "font": news_black, background: "text_input_box"}
+    }
+ }
