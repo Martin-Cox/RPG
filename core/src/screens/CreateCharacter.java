@@ -3,14 +3,13 @@ package screens;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Label;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import labels.Dialogs;
 
@@ -23,12 +22,16 @@ public class CreateCharacter implements Screen{
     private Skin skin = new Skin(Gdx.files.internal("skins/Create_Character_Skin.json"),
             new TextureAtlas(Gdx.files.internal("skins/Create_Character_Skin.pack")));
 
-    private TextButton buttonOK = new TextButton(Dialogs.mainMenuNewGame, skin),
-            buttonCancel  = new TextButton(Dialogs.mainMenuLoadGame, skin);
+    private TextButton buttonOK = new TextButton(Dialogs.ok, skin),
+            buttonCancel  = new TextButton(Dialogs.cancel, skin);
+
+    private TextField charName = new TextField(Dialogs.playerCharacterNameInitialValue, skin);
 
     private Label enterName = new Label(Dialogs.playerCharacterNameTitle, skin);
 
     private Table tableLayout = new Table();
+
+    private BitmapFont inputFont;
 
     @Override
     public void render(float delta) {
@@ -47,6 +50,21 @@ public class CreateCharacter implements Screen{
 
         //Button listeners
         createListeners();
+
+        inputFont = new BitmapFont(Gdx.files.internal("fonts/news_black.fnt"), false);
+
+        //Skin for the input field, json doesn't seem to work
+        TextField.TextFieldStyle inputFieldStyle = new TextField.TextFieldStyle();
+        inputFieldStyle.background = skin.getDrawable("text_input_box");
+        inputFieldStyle.font = inputFont;
+        inputFieldStyle.fontColor = Color.BLACK;
+        charName.setStyle(inputFieldStyle);
+
+        //tableLayout.setDebug(true);
+        tableLayout.add(enterName).padBottom(75).row();
+        tableLayout.add(charName).size(300,100).padBottom(20).row();
+        tableLayout.add(buttonOK).size(300,100).padBottom(20).row();
+        tableLayout.add(buttonCancel).size(300,100).padBottom(20).row();
 
         tableLayout.setFillParent(true);
         stage.addActor(tableLayout);

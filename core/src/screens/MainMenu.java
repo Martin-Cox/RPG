@@ -52,7 +52,7 @@ public class MainMenu implements Screen{
         //Add Title and Buttons to tableLayout
         //tableLayout.setDebug(true);
         tableLayout.add(title).padBottom(75).row();
-        tableLayout.add(buttonNew).size(300,100).padBottom(20).row();
+        tableLayout.add(buttonNew).size(300, 100).padBottom(20).row();
         tableLayout.add(buttonLoad).size(300,100).padBottom(20).row();
         tableLayout.add(buttonExit).size(300,100).padBottom(20).row();
 
@@ -84,7 +84,7 @@ public class MainMenu implements Screen{
         buttonNew.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                ((Game)Gdx.app.getApplicationListener()).setScreen(new SplashScreen());
+                ((Game)Gdx.app.getApplicationListener()).setScreen(new CreateCharacter());
             }
         });
 

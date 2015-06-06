@@ -12,7 +12,7 @@
         "default": { "up": "blue_button_inactive" , "down": "blue_button_active", "font": news_black }
     }
 	
-	"com.badlogic.gdx.scenes.scene2d.ui.TextInput$TextInputStyle": { 
+	"com.badlogic.gdx.scenes.scene2d.ui.TextField$TextFieldStyle": { 
         "default": { "font": news_black, background: "text_input_box"}
     }
  }
