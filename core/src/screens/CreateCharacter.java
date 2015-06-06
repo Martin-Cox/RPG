@@ -11,6 +11,7 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import consts.Consts;
 import labels.Dialogs;
 
 /**
@@ -95,7 +96,8 @@ public class CreateCharacter implements Screen{
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 //Go to debug screen
-                ((Game)Gdx.app.getApplicationListener()).setScreen(new SplashScreen());
+                Consts.CHAR_NAME = charName.getText();  //Lazy workaround, shouldn't use global variables like this
+                ((Game) Gdx.app.getApplicationListener()).setScreen(new DebugScreen());
             }
         });
         buttonCancel.addListener(new ClickListener() {

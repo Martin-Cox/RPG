@@ -10,4 +10,6 @@ public class Consts {
 
     public static final String WINDOW_TITLE = "Martin RPG";
 
+    public static String CHAR_NAME = "";
+
 }
