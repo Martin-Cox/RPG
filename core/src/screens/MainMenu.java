@@ -37,11 +37,6 @@ public class MainMenu implements Screen{
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         stage.act();
         stage.draw();
-
-        //Close game by pressing Esc key
-        //if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
-        //    Gdx.app.exit();
-        //}
     }
 
     @Override
@@ -89,9 +84,6 @@ public class MainMenu implements Screen{
         buttonNew.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                //Same way we moved here from the Splash Screen
-                //We set it to new Splash because we got no other screens
-                //otherwise you put the screen there where you want to go
                 ((Game)Gdx.app.getApplicationListener()).setScreen(new SplashScreen());
             }
         });
