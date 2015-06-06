@@ -1,0 +1,13 @@
+{
+    "com.badlogic.gdx.graphics.g2d.BitmapFont": {
+        "title_font": { "file": "fonts/menu_title.fnt" },
+		"news_black": { "file": "fonts/news_black.fnt" },
+		"news_white": { "file": "fonts/news_white.fnt" },
+    },
+	
+	    "com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle": {
+        "title": { "font": title_font },
+		"menu_button_inactive": { "font": news_black, "background": blue_button_inactive},
+		"menu_button_active": { "font": news_black, "background": blue_button_active},
+    },
+ }
