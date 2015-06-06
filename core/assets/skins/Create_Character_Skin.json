@@ -5,7 +5,7 @@
     },
 	
 	"com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle": {
-		"Default": { "font": news_white},
+		"default": { "font": news_white},
     },
 	
 	"com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle": { 
