@@ -100,13 +100,13 @@ public class DebugScreen implements Screen{
         if(Gdx.input.isTouched()) {
             touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
             if (touchPos.x > charIcon.getX() && touchPos.x < (charIcon.getX() + charIcon.getWidth())) {
-                if (touchPos.y > (Consts.WINDOW_HEIGHT - charIcon.getY()) && touchPos.y < (Consts.WINDOW_HEIGHT - (charIcon.getY() + charIcon.getHeight()))) {
+                if (touchPos.y > (Consts.WINDOW_HEIGHT - (charIcon.getY() + charIcon.getHeight())) && touchPos.y < (Consts.WINDOW_HEIGHT - charIcon.getY())) {
                     touchSprite = true;
                 }
             }
             if (touchSprite == true) {
                 charIcon.x = touchPos.x - 225 / 2;
-                charIcon.y = touchPos.y - 225 / 2;
+                charIcon.y = Consts.WINDOW_HEIGHT - touchPos.y - 225 / 2;
             }
         } else {
             if (touchSprite == true) {
@@ -117,7 +117,7 @@ public class DebugScreen implements Screen{
         //Char icon position
         batch.begin();
         font.draw(batch, "Char X position:" + charIcon.getX() + " to " + (charIcon.getX() + charIcon.getWidth()), 10, 990);
-        font.draw(batch, "Char Y position:" + (Consts.WINDOW_HEIGHT - charIcon.getY()) + " to " + (Consts.WINDOW_HEIGHT - (charIcon.getY() + charIcon.getHeight())), 10, 960);
+        font.draw(batch, "Char Y position:" + (Consts.WINDOW_HEIGHT - (charIcon.getY() + charIcon.getHeight()) + " to " + (Consts.WINDOW_HEIGHT - charIcon.getY())), 10, 960);
         font.draw(batch, "Touch sprite: " + touchSprite, 10, 930);
         batch.end();
     }
