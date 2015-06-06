@@ -11,6 +11,11 @@ import java.lang.reflect.Field;
  */
 public class Dialogs {
 
+    //Main Menu
+    public static final String mainMenuNewGame = "New Game";
+    public static final String mainMenuLoadGame = "Load Game";
+    public static final String mainMenuExit = "Exit";
+
     public static final String playerCharacterNameTitle = "What is your characters name?";
     public static final String playerCharacterNameInitialValue = "Enter a name";
 
