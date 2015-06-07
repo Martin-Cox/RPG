@@ -12,6 +12,8 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import consts.Consts;
+import main.Camera;
 
 public class SplashScreen implements Screen {
 
@@ -30,13 +32,16 @@ public class SplashScreen implements Screen {
 
     @Override
     public void resize(int width, int height) {
+        stage.getViewport().setCamera(new Camera(Consts.WINDOW_WIDTH, Consts.WINDOW_HEIGHT));
+        tableLayout.invalidateHierarchy();
+        tableLayout.setSize(Consts.WINDOW_WIDTH, Consts.WINDOW_HEIGHT);
     }
 
     @Override
     public void show() {
 
         //tableLayout.setDebug(true);
-        tableLayout.setFillParent(true);
+        //tableLayout.setFillParent(true);
         stage.addActor(tableLayout);
 
         tableLayout.add(splashImage);

@@ -16,7 +16,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import consts.Consts;
 import labels.Dialogs;
+import main.Camera;
 
 /**
  * Created by Martin on 05/06/2015.
@@ -39,6 +41,8 @@ public class MainMenu implements Screen{
 
     private Music backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("music/Mesmerize.ogg"));
 
+    private Camera camera = new Camera(Consts.WINDOW_WIDTH, Consts.WINDOW_HEIGHT);;
+
     @Override
     public void render(float delta) {
         Gdx.gl.glClearColor(0, 0, 0, 1);
@@ -48,6 +52,7 @@ public class MainMenu implements Screen{
         //Draw BG image
         stage.getBatch().begin();
         stage.getBatch().draw(backgroundTexture, 0, 0);
+        stage.getBatch().setProjectionMatrix(camera.combined);
         stage.getBatch().end();
 
         stage.draw();
@@ -55,6 +60,9 @@ public class MainMenu implements Screen{
 
     @Override
     public void resize(int width, int height) {
+        stage.getViewport().setCamera(new Camera(Consts.WINDOW_WIDTH, Consts.WINDOW_HEIGHT));
+        tableLayout.invalidateHierarchy();
+        tableLayout.setSize(Consts.WINDOW_WIDTH, Consts.WINDOW_HEIGHT);
     }
 
     @Override
@@ -67,10 +75,10 @@ public class MainMenu implements Screen{
         //tableLayout.setDebug(true);
         tableLayout.add(title).padBottom(75).row();
         tableLayout.add(buttonNew).size(300, 100).padBottom(20).row();
-        tableLayout.add(buttonLoad).size(300,100).padBottom(20).row();
+        tableLayout.add(buttonLoad).size(300, 100).padBottom(20).row();
         tableLayout.add(buttonExit).size(300,100).padBottom(20).row();
 
-        tableLayout.setFillParent(true);
+        //tableLayout.setFillParent(true);
         stage.addActor(tableLayout);
 
         backgroundMusic.play();

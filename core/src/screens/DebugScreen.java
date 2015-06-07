@@ -20,6 +20,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import consts.Consts;
 import labels.Dialogs;
+import main.Camera;
 import main.SimpleCreateCharacter;
 
 import java.util.Map;
@@ -54,11 +55,18 @@ public class DebugScreen implements Screen{
 
     private Player player;
 
+    private Camera camera = new Camera(Consts.WINDOW_WIDTH, Consts.WINDOW_HEIGHT);
+
     @Override
     public void render(float delta) {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         stage.act();
+
+        stage.getBatch().begin();
+        stage.getBatch().setProjectionMatrix(camera.combined);
+        stage.getBatch().end();
+
         stage.draw();
 
         frameCount++;
@@ -77,22 +85,19 @@ public class DebugScreen implements Screen{
         stage.addActor(mousePos);
 
         batch.begin();
+        //batch.setProjectionMatrix(camera.combined);
         batch.draw(charImage, charIcon.x, charIcon.y);
-        batch.end();
 
         //Display character stats
         int heightPosition = 200;
         for (Map.Entry<String, Integer> entry :  player.getBaseStats().entrySet()) {
             String key = entry.getKey();
             Integer value = entry.getValue();
-            batch.begin();
             font.draw(batch, "Stat " + entry.getKey() + ": " + entry.getValue(), 100, heightPosition);
-            batch.end();
             heightPosition += 35;
         }
-        batch.begin();
+
         font.draw(batch, "Player name: " + player.getName(), 100, heightPosition);
-        batch.end();
 
         Gdx.input.setInputProcessor(stage);
 
@@ -115,7 +120,6 @@ public class DebugScreen implements Screen{
         }
 
         //Char icon position
-        batch.begin();
         font.draw(batch, "Char X position:" + charIcon.getX() + " to " + (charIcon.getX() + charIcon.getWidth()), 10, 990);
         font.draw(batch, "Char Y position:" + (Consts.WINDOW_HEIGHT - (charIcon.getY() + charIcon.getHeight()) + " to " + (Consts.WINDOW_HEIGHT - charIcon.getY())), 10, 960);
         font.draw(batch, "Touch sprite: " + touchSprite, 10, 930);
@@ -124,6 +128,9 @@ public class DebugScreen implements Screen{
 
     @Override
     public void resize(int width, int height) {
+        stage.getViewport().setCamera(new Camera(Consts.WINDOW_WIDTH, Consts.WINDOW_HEIGHT));
+        tableLayout.invalidateHierarchy();
+        tableLayout.setSize(Consts.WINDOW_WIDTH, Consts.WINDOW_HEIGHT);
     }
 
     @Override
@@ -140,7 +147,7 @@ public class DebugScreen implements Screen{
         tableLayout.add(title).padBottom(75).row();
         tableLayout.add(buttonExit).size(300, 100).padBottom(20).row();
 
-        tableLayout.setFillParent(true);
+        //tableLayout.setFillParent(true);
         stage.addActor(tableLayout);
 
         frameCountLabel.setPosition(10, 1050);
