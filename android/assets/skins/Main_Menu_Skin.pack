@@ -3,19 +3,19 @@ Main_Menu_Skin.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-blue_button_inactive
+button_inactive
   rotate: false
   xy: 1, 1
-  size: 49, 49
-  split: 6, 6, 4, 9
-  orig: 49, 49
+  size: 190, 49
+  split: 8, 9, 9, 14
+  orig: 190, 49
   offset: 0, 0
   index: -1
-blue_button_active
+button_active
   rotate: false
-  xy: 52, 5
-  size: 49, 45
-  split: 6, 6, 4, 5
-  orig: 49, 45
+  xy: 193, 5
+  size: 190, 45
+  split: 8, 9, 9, 9
+  orig: 190, 45
   offset: 0, 0
   index: -1

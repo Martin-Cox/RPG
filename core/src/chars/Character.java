@@ -124,7 +124,7 @@ public class Character {
     public void updateInventory(Item item, Integer quantity) {
         Integer updatedQuantity;
         try {
-            updatedQuantity = this.inventory.get(item).intValue() + quantity;
+            updatedQuantity = this.inventory.get(item) + quantity;
             if (updatedQuantity < 0)  {updatedQuantity = 0; }
             if (updatedQuantity > Consts.MAX_ITEM_QUANTITY)  {updatedQuantity = Consts.MAX_ITEM_QUANTITY; }
         } catch(NullPointerException e) {

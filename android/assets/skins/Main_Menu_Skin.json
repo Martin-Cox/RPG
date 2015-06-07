@@ -11,6 +11,6 @@
     },
 	
 	"com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle": { 
-        "menu_button": { "up": "blue_button_inactive" , "down": "blue_button_active", "font": news_black }
+        "menu_button": { "up": "button_inactive" , "down": "button_active", "font": news_black }
     }
  }
