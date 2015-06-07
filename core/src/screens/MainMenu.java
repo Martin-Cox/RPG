@@ -1,8 +1,10 @@
 package screens;
 
+import com.badlogic.gdx.Audio;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -34,6 +36,8 @@ public class MainMenu implements Screen{
     private Table tableLayout = new Table();
 
     private Texture backgroundTexture = new Texture("Main_Menu_BG.png");
+
+    private Music backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("music/Mesmerize.ogg"));
 
     @Override
     public void render(float delta) {
@@ -69,6 +73,9 @@ public class MainMenu implements Screen{
         tableLayout.setFillParent(true);
         stage.addActor(tableLayout);
 
+        backgroundMusic.play();
+        backgroundMusic.setLooping(true);
+
         Gdx.input.setInputProcessor(stage);
     }
 
@@ -88,6 +95,8 @@ public class MainMenu implements Screen{
     @Override
     public void dispose() {
         stage.dispose();
+        backgroundMusic.dispose();
+
     }
 
     public void createListeners() {
