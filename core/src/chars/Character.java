@@ -1,5 +1,6 @@
 package chars;
 
+import consts.Consts;
 import entities.Item;
 import entities.Magic;
 import entities.StatusEffect;
@@ -125,16 +126,16 @@ public class Character {
         try {
             updatedQuantity = this.inventory.get(item).intValue() + quantity;
             if (updatedQuantity < 0)  {updatedQuantity = 0; }
-            if (updatedQuantity > 255)  {updatedQuantity = 255; }
+            if (updatedQuantity > Consts.MAX_ITEM_QUANTITY)  {updatedQuantity = Consts.MAX_ITEM_QUANTITY; }
         } catch(NullPointerException e) {
             //This just means that the character didn't already have this item in their inventory
 
             //If character does not have any of the item and we are trying to remove some, then add the item to the inventory but with 0 quantity
             if (quantity > 0) {
-                if (quantity <= 255) {
+                if (quantity <= Consts.MAX_ITEM_QUANTITY) {
                     updatedQuantity = quantity;
                 } else {
-                    updatedQuantity = 255;
+                    updatedQuantity = Consts.MAX_ITEM_QUANTITY;
                 }
             } else {
                 updatedQuantity = 0;
@@ -181,16 +182,16 @@ public class Character {
         try {
             updatedQuantity = this.magic.get(magic).intValue() + quantity;
             if (updatedQuantity < 0)  {updatedQuantity = 0; }
-            if (updatedQuantity > 255)  {updatedQuantity = 255; }
+            if (updatedQuantity > Consts.MAX_SPELL_QUANTITY)  {updatedQuantity = Consts.MAX_SPELL_QUANTITY; }
         } catch(NullPointerException e) {
             //This just means that the character didn't already have this magic in their inventory
 
             //If character does not have any of the spell and we are trying to remove some, then add the magic to the inventory but with 0 quantity
             if (quantity > 0) {
-                if (quantity <= 255) {
+                if (quantity <= Consts.MAX_SPELL_QUANTITY) {
                     updatedQuantity = quantity;
                 } else {
-                    updatedQuantity = 255;
+                    updatedQuantity = Consts.MAX_SPELL_QUANTITY;
                 }
             } else {
                 updatedQuantity = 0;
